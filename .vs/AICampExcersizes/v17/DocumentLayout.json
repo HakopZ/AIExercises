@@ -1,0 +1,172 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\hakop.zarikyan\\Source\\Repos\\HakopZ\\AIExercises\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{470C32D6-9B8F-48EB-BC8C-EC79C71AB1EB}|AICampExcersizes\\AICampExcersizes.csproj|c:\\users\\hakop.zarikyan\\source\\repos\\hakopz\\aiexercises\\aicampexcersizes\\search.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{470C32D6-9B8F-48EB-BC8C-EC79C71AB1EB}|AICampExcersizes\\AICampExcersizes.csproj|solutionrelative:aicampexcersizes\\search.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD184CB2-8BA4-4B3B-8937-08378D9E338A}|8 Puzzle Solver\\8 Puzzle Solver.csproj|c:\\users\\hakop.zarikyan\\source\\repos\\hakopz\\aiexercises\\8 puzzle solver\\gamestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD184CB2-8BA4-4B3B-8937-08378D9E338A}|8 Puzzle Solver\\8 Puzzle Solver.csproj|solutionrelative:8 puzzle solver\\gamestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{470C32D6-9B8F-48EB-BC8C-EC79C71AB1EB}|AICampExcersizes\\AICampExcersizes.csproj|c:\\users\\hakop.zarikyan\\source\\repos\\hakopz\\aiexercises\\aicampexcersizes\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{470C32D6-9B8F-48EB-BC8C-EC79C71AB1EB}|AICampExcersizes\\AICampExcersizes.csproj|solutionrelative:aicampexcersizes\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD184CB2-8BA4-4B3B-8937-08378D9E338A}|8 Puzzle Solver\\8 Puzzle Solver.csproj|c:\\users\\hakop.zarikyan\\source\\repos\\hakopz\\aiexercises\\8 puzzle solver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD184CB2-8BA4-4B3B-8937-08378D9E338A}|8 Puzzle Solver\\8 Puzzle Solver.csproj|solutionrelative:8 puzzle solver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD184CB2-8BA4-4B3B-8937-08378D9E338A}|8 Puzzle Solver\\8 Puzzle Solver.csproj|c:\\users\\hakop.zarikyan\\source\\repos\\hakopz\\aiexercises\\8 puzzle solver\\priorityqueuewrapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD184CB2-8BA4-4B3B-8937-08378D9E338A}|8 Puzzle Solver\\8 Puzzle Solver.csproj|solutionrelative:8 puzzle solver\\priorityqueuewrapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{470C32D6-9B8F-48EB-BC8C-EC79C71AB1EB}|AICampExcersizes\\AICampExcersizes.csproj|c:\\users\\hakop.zarikyan\\source\\repos\\hakopz\\aiexercises\\aicampexcersizes\\vertex.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{470C32D6-9B8F-48EB-BC8C-EC79C71AB1EB}|AICampExcersizes\\AICampExcersizes.csproj|solutionrelative:aicampexcersizes\\vertex.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C625AACF-27EA-4683-B049-46554816B193}|Visualizer\\Visualizer.csproj|c:\\users\\hakop.zarikyan\\source\\repos\\hakopz\\aiexercises\\visualizer\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C625AACF-27EA-4683-B049-46554816B193}|Visualizer\\Visualizer.csproj|solutionrelative:visualizer\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C625AACF-27EA-4683-B049-46554816B193}|Visualizer\\Visualizer.csproj|c:\\users\\hakop.zarikyan\\source\\repos\\hakopz\\aiexercises\\visualizer\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C625AACF-27EA-4683-B049-46554816B193}|Visualizer\\Visualizer.csproj|solutionrelative:visualizer\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{470C32D6-9B8F-48EB-BC8C-EC79C71AB1EB}|AICampExcersizes\\AICampExcersizes.csproj|c:\\users\\hakop.zarikyan\\source\\repos\\hakopz\\aiexercises\\aicampexcersizes\\graph.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{470C32D6-9B8F-48EB-BC8C-EC79C71AB1EB}|AICampExcersizes\\AICampExcersizes.csproj|solutionrelative:aicampexcersizes\\graph.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PriorityQueueWrapper.cs",
+              "DocumentMoniker": "C:\\Users\\hakop.zarikyan\\Source\\Repos\\HakopZ\\AIExercises\\8 Puzzle Solver\\PriorityQueueWrapper.cs",
+              "RelativeDocumentMoniker": "8 Puzzle Solver\\PriorityQueueWrapper.cs",
+              "ToolTip": "C:\\Users\\hakop.zarikyan\\Source\\Repos\\HakopZ\\AIExercises\\8 Puzzle Solver\\PriorityQueueWrapper.cs",
+              "RelativeToolTip": "8 Puzzle Solver\\PriorityQueueWrapper.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-14T03:40:08.57Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GameState.cs",
+              "DocumentMoniker": "C:\\Users\\hakop.zarikyan\\Source\\Repos\\HakopZ\\AIExercises\\8 Puzzle Solver\\GameState.cs",
+              "RelativeDocumentMoniker": "8 Puzzle Solver\\GameState.cs",
+              "ToolTip": "C:\\Users\\hakop.zarikyan\\Source\\Repos\\HakopZ\\AIExercises\\8 Puzzle Solver\\GameState.cs",
+              "RelativeToolTip": "8 Puzzle Solver\\GameState.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-14T03:11:35.117Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Search.cs",
+              "DocumentMoniker": "C:\\Users\\hakop.zarikyan\\Source\\Repos\\HakopZ\\AIExercises\\AICampExcersizes\\Search.cs",
+              "RelativeDocumentMoniker": "AICampExcersizes\\Search.cs",
+              "ToolTip": "C:\\Users\\hakop.zarikyan\\Source\\Repos\\HakopZ\\AIExercises\\AICampExcersizes\\Search.cs",
+              "RelativeToolTip": "AICampExcersizes\\Search.cs",
+              "ViewState": "AQIAAIEAAAAAAAAAAAAAAI0AAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-14T03:04:49.467Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\hakop.zarikyan\\Source\\Repos\\HakopZ\\AIExercises\\AICampExcersizes\\Program.cs",
+              "RelativeDocumentMoniker": "AICampExcersizes\\Program.cs",
+              "ToolTip": "C:\\Users\\hakop.zarikyan\\Source\\Repos\\HakopZ\\AIExercises\\AICampExcersizes\\Program.cs",
+              "RelativeToolTip": "AICampExcersizes\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-14T03:04:00.776Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\hakop.zarikyan\\Source\\Repos\\HakopZ\\AIExercises\\8 Puzzle Solver\\Program.cs",
+              "RelativeDocumentMoniker": "8 Puzzle Solver\\Program.cs",
+              "ToolTip": "C:\\Users\\hakop.zarikyan\\Source\\Repos\\HakopZ\\AIExercises\\8 Puzzle Solver\\Program.cs",
+              "RelativeToolTip": "8 Puzzle Solver\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-14T02:24:23.727Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Vertex.cs",
+              "DocumentMoniker": "C:\\Users\\hakop.zarikyan\\Source\\Repos\\HakopZ\\AIExercises\\AICampExcersizes\\Vertex.cs",
+              "RelativeDocumentMoniker": "AICampExcersizes\\Vertex.cs",
+              "ToolTip": "C:\\Users\\hakop.zarikyan\\Source\\Repos\\HakopZ\\AIExercises\\AICampExcersizes\\Vertex.cs",
+              "RelativeToolTip": "AICampExcersizes\\Vertex.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-14T01:40:05.337Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Graph.cs",
+              "DocumentMoniker": "C:\\Users\\hakop.zarikyan\\Source\\Repos\\HakopZ\\AIExercises\\AICampExcersizes\\Graph.cs",
+              "RelativeDocumentMoniker": "AICampExcersizes\\Graph.cs",
+              "ToolTip": "C:\\Users\\hakop.zarikyan\\Source\\Repos\\HakopZ\\AIExercises\\AICampExcersizes\\Graph.cs",
+              "RelativeToolTip": "AICampExcersizes\\Graph.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACgAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-14T01:40:01.778Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\hakop.zarikyan\\Source\\Repos\\HakopZ\\AIExercises\\Visualizer\\Form1.cs",
+              "RelativeDocumentMoniker": "Visualizer\\Form1.cs",
+              "ToolTip": "C:\\Users\\hakop.zarikyan\\Source\\Repos\\HakopZ\\AIExercises\\Visualizer\\Form1.cs",
+              "RelativeToolTip": "Visualizer\\Form1.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAqwCsAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-14T01:39:45.648Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\hakop.zarikyan\\Source\\Repos\\HakopZ\\AIExercises\\Visualizer\\Form1.cs",
+              "RelativeDocumentMoniker": "Visualizer\\Form1.cs",
+              "ToolTip": "C:\\Users\\hakop.zarikyan\\Source\\Repos\\HakopZ\\AIExercises\\Visualizer\\Form1.cs [Design]",
+              "RelativeToolTip": "Visualizer\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-14T01:39:43.285Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

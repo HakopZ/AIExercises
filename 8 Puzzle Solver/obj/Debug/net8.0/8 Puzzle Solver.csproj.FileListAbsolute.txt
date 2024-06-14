@@ -1,0 +1,6 @@
+C:\Users\hakop.zarikyan\Source\Repos\HakopZ\AIExercises\8 Puzzle Solver\obj\Debug\net8.0\8 Puzzle Solver.csproj.AssemblyReference.cache
+C:\Users\hakop.zarikyan\Source\Repos\HakopZ\AIExercises\8 Puzzle Solver\obj\Debug\net8.0\8 Puzzle Solver.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hakop.zarikyan\Source\Repos\HakopZ\AIExercises\8 Puzzle Solver\obj\Debug\net8.0\8 Puzzle Solver.AssemblyInfoInputs.cache
+C:\Users\hakop.zarikyan\Source\Repos\HakopZ\AIExercises\8 Puzzle Solver\obj\Debug\net8.0\8 Puzzle Solver.AssemblyInfo.cs
+C:\Users\hakop.zarikyan\Source\Repos\HakopZ\AIExercises\8 Puzzle Solver\obj\Debug\net8.0\8 Puzzle Solver.csproj.CoreCompileInputs.cache
+C:\Users\hakop.zarikyan\Source\Repos\HakopZ\AIExercises\8 Puzzle Solver\obj\Debug\net8.0\8 Puzzle Solver.sourcelink.json

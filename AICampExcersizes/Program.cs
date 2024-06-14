@@ -5,55 +5,55 @@
 
 using System.Drawing;
 
-class MyQueue : IFrontier
+class MyQueue<T> : IFrontier<T>
 {
     
-    public Queue<VertexState<Point>> backed = [];
+    public Queue<T> backed = [];
     public int Count => backed.Count;
 
-    public void AddNode(VertexState<Point> node, float priority)
+    public void AddNode(T node, float priority)
     {
         backed.Enqueue(node);
     }
 
-    public VertexState<Point> GiveMeNode()
+    public T GiveMeNode()
     {
         return backed.Dequeue();
     }
 
-    public VertexState<Point> Peek()
+    public T Peek()
     {
         return backed.Peek();
     }
 
-    public bool Contains(VertexState<Point> node)
+    public bool Contains(T node)
     {
         return backed.Contains(node);
     }
 
 }
-class MyStack : IFrontier
+class MyStack<T> : IFrontier<T>
 {
-    public Stack<VertexState<Point>> backed = [];
+    public Stack<T> backed = [];
 
     public int Count => backed.Count;
 
-    public void AddNode(VertexState<Point> node, float priority)
+    public void AddNode(T node, float priority)
     {
         backed.Push(node);
     }
 
-    public bool Contains(VertexState<Point> node)
+    public bool Contains(T node)
     {
         return backed.Contains(node);
     }
 
-    public VertexState<Point> GiveMeNode()
+    public T GiveMeNode()
     {
         return backed.Pop();
     }
 
-    public VertexState<Point> Peek()
+    public T Peek()
     {
         return backed.Peek();
     }
@@ -82,8 +82,8 @@ class Program
                 
             }
         }
-        MyQueue myQueue = new MyQueue();
-        var path = MySearch.NewSearch(graph.FindVertex(new Point(0, 0)), graph.FindVertex(new Point(3, 3)), myQueue, MySearch.UCSPriority);
+        MyQueue<Point> myQueue = new MyQueue<Point>();
+        //var path = MySearch.NewSearch<Point>(graph.FindVertex(new Point(0, 0)), graph.FindVertex(new Point(3, 3)), myQueue, MySearch.UCSPriority);
         ;
     }
 }
