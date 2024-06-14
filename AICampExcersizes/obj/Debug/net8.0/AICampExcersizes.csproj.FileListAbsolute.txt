@@ -1,0 +1,14 @@
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/AICampExcersizes/bin/Debug/net8.0/AICampExcersizes
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/AICampExcersizes/bin/Debug/net8.0/AICampExcersizes.deps.json
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/AICampExcersizes/bin/Debug/net8.0/AICampExcersizes.runtimeconfig.json
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/AICampExcersizes/bin/Debug/net8.0/AICampExcersizes.dll
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/AICampExcersizes/bin/Debug/net8.0/AICampExcersizes.pdb
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/AICampExcersizes/obj/Debug/net8.0/AICampExcersizes.GeneratedMSBuildEditorConfig.editorconfig
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/AICampExcersizes/obj/Debug/net8.0/AICampExcersizes.AssemblyInfoInputs.cache
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/AICampExcersizes/obj/Debug/net8.0/AICampExcersizes.AssemblyInfo.cs
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/AICampExcersizes/obj/Debug/net8.0/AICampExcersizes.csproj.CoreCompileInputs.cache
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/AICampExcersizes/obj/Debug/net8.0/AICampExcersizes.dll
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/AICampExcersizes/obj/Debug/net8.0/refint/AICampExcersizes.dll
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/AICampExcersizes/obj/Debug/net8.0/AICampExcersizes.pdb
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/AICampExcersizes/obj/Debug/net8.0/AICampExcersizes.genruntimeconfig.cache
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/AICampExcersizes/obj/Debug/net8.0/ref/AICampExcersizes.dll
