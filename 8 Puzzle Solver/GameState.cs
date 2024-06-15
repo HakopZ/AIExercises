@@ -6,7 +6,8 @@ namespace _8_Puzzle_Solver
 
         public int Value { get; set; }
         public int ZeroSpot { get; set; }
-        public float TotalDistance { get; set; } = 0;
+        public float TotalDistance { get; set; } = float.MaxValue;
+        public float Distance { get; set; } = float.MaxValue;
         public int Weight { get; set; } = 0;
         public IVertexState<int> Previous { get; set; }
 

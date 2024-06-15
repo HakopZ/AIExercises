@@ -41,19 +41,15 @@ namespace _8_Puzzle_Solver
         public static float StatePriority(IVertexState<int> currentState, IVertexState<int> nextState, List<IVertexState<int>> visited)
         {
             var neighbor = nextState;
-            float tentative = neighbor.Weight + currentState.Previous.TotalDistance;
+            float tentative = neighbor.Weight + currentState.Distance;
 
-            //If we are revisiting a vertex
-            //Check if the new tentative distance is smaller than the current tentative distance
-            //If so update the tentative distance and set visited to false for that neighbor
-            //By making visited false we are then allowing it to be added to the queue if it is not already in there
             float h = float.MinValue;
-            if (tentative < currentState.TotalDistance)
+            if (tentative < nextState.Distance)
             {
-                visited.Remove(currentState);
-                currentState.TotalDistance = tentative;
-
-                h = Heursitic(neighbor);
+                visited.Remove(neighbor);
+                nextState.Distance = tentative;
+                nextState.TotalDistance = Heursitic(neighbor);
+                h = nextState.TotalDistance;
             }
 
             if (visited.Contains(nextState))
@@ -71,6 +67,7 @@ namespace _8_Puzzle_Solver
             {
                 int val = board % 10;
                 board /= 10;
+                //score += val != index ? 1 : 0;
                 score += Math.Abs(val - index);
                 index--;
             }
@@ -82,19 +79,14 @@ namespace _8_Puzzle_Solver
     {
         public static bool CheckSolvable(int board)
         {
-            var pList = board.ToString().Select(x => int.Parse(x.ToString())).ToList();
+            var pList = board.ToString().Select(x => {
+                int val = int.Parse(x.ToString());
+                val = val == 9 ? 0 : val;
+                return val;
+                }).ToArray();
             int inversions = 0;
 
-            for (int i = 0; i < pList.Count; i++)
-            {
-                for (int j = i + 1; j < pList.Count; j++)
-                {
-                    if (pList[j] > pList[i])
-                    {
-                        inversions++;
-                    }
-                }
-            }
+            inversions = getInvCount(pList);
 
             if (inversions % 2 == 1)
             {
@@ -107,13 +99,31 @@ namespace _8_Puzzle_Solver
                 return true;
             }
         }
+        static int getInvCount(int[] arr)
+        {
+            int inv_count = 0;
+            for (int i = 0; i < 9; i++)
+                for (int j = i + 1; j < 9; j++)
+
+                    // Value 0 is used for empty space
+                    if (arr[i] > 0 && arr[j] > 0 && arr[i] > arr[j])
+                        inv_count++;
+            return inv_count;
+        }
+
+        
+       
+
+
         static void Main(string[] args)
         {
-            //int board = 692345781;
-            int board = 123456798;
-            CheckSolvable(board);
+            int board = 193456782;
+            //int board = 123456798;
+            if (!CheckSolvable(board)) return;
 
-            var path = GameController.Solve(board, 1);
+
+            var path = GameController.Solve(board, 7);
+            Console.WriteLine(path.Count);
             GameController.PrintPath(path);
             Console.WriteLine("Hello, World!");
         }

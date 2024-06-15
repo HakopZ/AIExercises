@@ -4,84 +4,12 @@ public interface IVertexState<TValue>
     public TValue Value { get; set; }
     public IVertexState<TValue> Previous { get; set; }
     public float TotalDistance { get; set; }
+    public float Distance { get; set; }
     public int Weight { get; set; }
 
     public List<IVertexState<TValue>> GetNeighbors();
 
 }
-    /*
-    public static List<Vertex<Point>> Search(Vertex<Point> start,
-                                             Vertex<Point> end,
-                                             IFrontier frontier,
-                                             Action<IFrontier, Dictionary<Vertex<Point>, (Vertex<Point> parent, int distance)>, List<Vertex<Point>>, VertexState<Point>> addToFrontier)
-    {
-        VertexState<Point> startState = new(start, null, 0);
-
-        Dictionary<Vertex<Point>, (Vertex<Point>, int dis)> founder = [];
-        frontier.AddNode(startState, 0); //figure it out
-        VertexState<Point> curr = null;
-        List<Vertex<Point>> nodes = [];
-
-
-        while (frontier.Count > 0)
-        {
-
-            curr = frontier.GiveMeNode();
-
-            if (curr.Current == end)
-            {
-                break;
-            }
-            addToFrontier(frontier, founder, nodes, curr);
-
-        }
-        Stack<Vertex<Point>> stack = [];
-        while (curr != null)
-        {
-            stack.Push(curr.Current);
-            curr = curr.Previous;
-        }
-        return stack.ToList();
-    }
-
-    public static void BfsAndDfs(IFrontier frontier, Dictionary<Vertex<Point>, (Vertex<Point>, int distance)> founder, List<Vertex<Point>> visited, VertexState<Point> curr)
-    {
-        if (visited.Contains(curr.Current)) return;
-        foreach (var edge in curr.Current.Edges)
-        {
-            VertexState<Point> state = new(edge.ToVertex, curr, 0);
-            frontier.AddNode(state, 0);
-            founder[edge.ToVertex] = (curr.Current, 0);
-        }
-        visited.Add(curr.Current);
-    }
-    public static void UCS(IFrontier frontier, Dictionary<Vertex<Point>, (Vertex<Point>, int distance)> founder, List<Vertex<Point>> visited, VertexState<Point> curr)
-    {
-        foreach (var edge in curr.Current.Edges)
-        {
-            int tentative = edge.Weight + founder[curr.Current].distance;
-            if (tentative < founder[edge.ToVertex].distance)
-            {
-                founder[edge.ToVertex] = (curr.Current, tentative);
-                visited.Remove(edge.ToVertex);
-
-            }
-            VertexState<Point> state = new VertexState<Point>(edge.ToVertex, curr, tentative);
-            if (!frontier.Contains(state) && !visited.Contains(edge.ToVertex))
-            {
-                frontier.AddNode(state, tentative);
-            }
-        }
-    }
-    public static void AStar()
-    {
-
-    }*?
-}*/
-
-
-
-
 //public
 //interface IVertexState<TValue>
 //    where TValue : struct, IComparable<TValue>;

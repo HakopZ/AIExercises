@@ -26,3 +26,25 @@ C:/Users/hakop.zarikyan/Source/Repos/HakopZ/AIExercises/8 Puzzle Solver/obj/Debu
 /Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/8 Puzzle Solver/obj/Debug/net8.0/8 Puzzle Solver.pdb
 /Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/8 Puzzle Solver/obj/Debug/net8.0/8 Puzzle Solver.genruntimeconfig.cache
 /Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/8 Puzzle Solver/obj/Debug/net8.0/ref/8 Puzzle Solver.dll
+C:\Users\hakop.zarikyan\Source\Repos\HakopZ\AIExercises\8 Puzzle Solver\bin\Debug\net8.0\AICampExcersizes.deps.json
+C:\Users\hakop.zarikyan\Source\Repos\HakopZ\AIExercises\8 Puzzle Solver\bin\Debug\net8.0\AICampExcersizes.runtimeconfig.json
+C:\Users\hakop.zarikyan\Source\Repos\HakopZ\AIExercises\8 Puzzle Solver\bin\Debug\net8.0\AICampExcersizes.exe
+C:\Users\hakop.zarikyan\Source\Repos\HakopZ\AIExercises\8 Puzzle Solver\bin\Debug\net8.0\8 Puzzle Solver.exe
+C:\Users\hakop.zarikyan\Source\Repos\HakopZ\AIExercises\8 Puzzle Solver\bin\Debug\net8.0\8 Puzzle Solver.deps.json
+C:\Users\hakop.zarikyan\Source\Repos\HakopZ\AIExercises\8 Puzzle Solver\bin\Debug\net8.0\8 Puzzle Solver.runtimeconfig.json
+C:\Users\hakop.zarikyan\Source\Repos\HakopZ\AIExercises\8 Puzzle Solver\bin\Debug\net8.0\8 Puzzle Solver.dll
+C:\Users\hakop.zarikyan\Source\Repos\HakopZ\AIExercises\8 Puzzle Solver\bin\Debug\net8.0\8 Puzzle Solver.pdb
+C:\Users\hakop.zarikyan\Source\Repos\HakopZ\AIExercises\8 Puzzle Solver\bin\Debug\net8.0\AICampExcersizes.dll
+C:\Users\hakop.zarikyan\Source\Repos\HakopZ\AIExercises\8 Puzzle Solver\bin\Debug\net8.0\AICampExcersizes.pdb
+C:\Users\hakop.zarikyan\Source\Repos\HakopZ\AIExercises\8 Puzzle Solver\obj\Debug\net8.0\8 Puzzle Solver.csproj.AssemblyReference.cache
+C:\Users\hakop.zarikyan\Source\Repos\HakopZ\AIExercises\8 Puzzle Solver\obj\Debug\net8.0\8 Puzzle Solver.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hakop.zarikyan\Source\Repos\HakopZ\AIExercises\8 Puzzle Solver\obj\Debug\net8.0\8 Puzzle Solver.AssemblyInfoInputs.cache
+C:\Users\hakop.zarikyan\Source\Repos\HakopZ\AIExercises\8 Puzzle Solver\obj\Debug\net8.0\8 Puzzle Solver.AssemblyInfo.cs
+C:\Users\hakop.zarikyan\Source\Repos\HakopZ\AIExercises\8 Puzzle Solver\obj\Debug\net8.0\8 Puzzle Solver.csproj.CoreCompileInputs.cache
+C:\Users\hakop.zarikyan\Source\Repos\HakopZ\AIExercises\8 Puzzle Solver\obj\Debug\net8.0\8 Puzzle Solver.sourcelink.json
+C:\Users\hakop.zarikyan\Source\Repos\HakopZ\AIExercises\8 Puzzle Solver\obj\Debug\net8.0\8 Puzzle.EEEDCA36.Up2Date
+C:\Users\hakop.zarikyan\Source\Repos\HakopZ\AIExercises\8 Puzzle Solver\obj\Debug\net8.0\8 Puzzle Solver.dll
+C:\Users\hakop.zarikyan\Source\Repos\HakopZ\AIExercises\8 Puzzle Solver\obj\Debug\net8.0\refint\8 Puzzle Solver.dll
+C:\Users\hakop.zarikyan\Source\Repos\HakopZ\AIExercises\8 Puzzle Solver\obj\Debug\net8.0\8 Puzzle Solver.pdb
+C:\Users\hakop.zarikyan\Source\Repos\HakopZ\AIExercises\8 Puzzle Solver\obj\Debug\net8.0\8 Puzzle Solver.genruntimeconfig.cache
+C:\Users\hakop.zarikyan\Source\Repos\HakopZ\AIExercises\8 Puzzle Solver\obj\Debug\net8.0\ref\8 Puzzle Solver.dll
