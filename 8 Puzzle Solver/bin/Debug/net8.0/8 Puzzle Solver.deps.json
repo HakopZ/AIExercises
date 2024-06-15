@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "8 Puzzle Solver/1.0.0": {
+        "dependencies": {
+          "AICampExcersizes": "1.0.0"
+        },
+        "runtime": {
+          "8 Puzzle Solver.dll": {}
+        }
+      },
+      "AICampExcersizes/1.0.0": {
+        "runtime": {
+          "AICampExcersizes.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "8 Puzzle Solver/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AICampExcersizes/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

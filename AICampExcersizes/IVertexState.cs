@@ -1,108 +1,12 @@
-using System.Drawing;
-public class MySearch<TStateValue>
-    where TStateValue : IComparable<TStateValue>
-{
-    //figure out a search 
-
-    //bfs 
-    public static List<IVertexState<TStateValue>> NewSearch<TState, TFrontier>(TState start,
-                                                TState end,
-                                                TFrontier frontier,
-                                                Func<IVertexState<TStateValue>, IVertexState<TStateValue>, List<IVertexState<TStateValue>>, float> findPriority)
-
-        where TFrontier : IFrontier<IVertexState<TStateValue>, TStateValue>
-        where TState : IVertexState<TStateValue>
-
+public interface IVertexState<TValue> 
+    where TValue : IComparable<TValue>
     {
-        IVertexState<TStateValue> currentState = start;
-        frontier.AddVertexState(currentState, 0);
-        List<IVertexState<TStateValue>> visited = [];
+    public TValue Value { get; set; }
+    public IVertexState<TValue> Previous { get; set; }
+    public float TotalDistance { get; set; }
+    public int Weight { get; set; }
 
-        while (frontier.Count > 0)
-        {
-            currentState = frontier.GiveNextVertexState();
-
-            if (visited.Contains(currentState)) continue;
-        
-            if (currentState.Value.Equals(end.Value)) break;
-
-            visited.Add(currentState);
-            
-            var neighbors = currentState.GetNeighbors();
-            foreach (var nextState in neighbors)
-            {
-                float priority = findPriority(currentState, nextState, visited);
-
-                if (priority == int.MinValue) continue;
-
-                if (!frontier.Contains(nextState))
-                {
-                    frontier.AddVertexState(nextState, priority);
-                }
-            }
-        }
-
-        Stack<IVertexState<TStateValue>> stack = [];
-        while (currentState != null)
-        {
-            stack.Push(currentState);
-            currentState = currentState.Previous;
-        }
-        return stack.ToList();
-
-    }
-
-    public static int BFSAndDFSPriority(IVertexState<TStateValue> curr, IVertexState<TStateValue> next, List<IVertexState<TStateValue>> visited)
-    {
-        return 0;
-    }
-
-    public static float UCSPriority(IVertexState<TStateValue> curr, IVertexState<TStateValue> next, List<IVertexState<TStateValue>> visited)
-    {
-        float tentative = next.Weight + curr.Previous.TotalDistance;
-        if (tentative < curr.TotalDistance)
-        {
-            curr.TotalDistance = tentative;
-            visited.Remove(next);
-
-        }
-        next.TotalDistance = tentative;
-
-        if (!visited.Contains(next))
-        {
-            return tentative;
-        }
-        return int.MinValue;
-    }
-    public static float AStarPriority(IVertexState<TStateValue> curr, IVertexState<TStateValue> next, List<IVertexState<TStateValue>> visited)
-    {
-       var neighbor = next;
-       float tentative = neighbor.Weight + curr.Previous.TotalDistance;
-
-       //If we are revisiting a vertex
-       //Check if the new tentative distance is smaller than the current tentative distance
-       //If so update the tentative distance and set visited to false for that neighbor
-       //By making visited false we are then allowing it to be added to the queue if it is not already in there
-       float h = float.MinValue;
-       if (tentative < curr.TotalDistance)
-       {
-           visited.Remove(curr);
-           curr.TotalDistance = tentative;
-
-           h = Heuristics(curr.Value, neighbor.Value);
-       }
-
-       if (visited.Contains(next))
-       {
-           return float.MinValue;
-       }
-       return h;
-    }
-
-    private static float Heuristics<T>(T value1, T value2)
-    {
-        throw new NotImplementedException();
-    }
+    public List<IVertexState<TValue>> GetNeighbors();
 
 }
     /*

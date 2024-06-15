@@ -40,5 +40,5 @@ public class Graph<T>
         val.Edges.Add(edge);
         Edges.Add(edge);
     }
-    public Vertex<T>? FindVertex(T val) => Vertices.Find(x => x.Value.Equals(val));
+    public Vertex<T> FindVertex(T val) => Vertices.Find(x => x.Value.Equals(val));
 }

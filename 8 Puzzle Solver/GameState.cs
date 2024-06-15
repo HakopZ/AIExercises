@@ -1,41 +1,41 @@
 ﻿
 namespace _8_Puzzle_Solver
 {
-    public class GameState<TValueType> : IVertexState<GameState, TValueType>
+    public class GameState : IVertexState<int>
     {
 
         public int Value { get; set; }
         public int ZeroSpot { get; set; }
-        public IVertexState<GameState<TValueType>, TValueType> Previous { get; set; } = null;
         public float TotalDistance { get; set; } = 0;
         public int Weight { get; set; } = 0;
-        
-        
-        
-        public GameState(int val)
+        public IVertexState<int> Previous { get; set; }
+
+        public GameState(int val, int zeroSpot, IVertexState<int> prev)
         {
             Value = val;
+            Previous = prev;
+            ZeroSpot = zeroSpot;
         }
 
-        public List<IVertexState<GameState<TValueType>, TValueType>> GetNeighbors()
+        public List<IVertexState<int>> GetNeighbors()
         {
-            List<IVertexState<GameState<TValueType>, TValueType>> moves = [];
+            List<IVertexState<int>> moves = [];
 
             for (int i = -3; i <= 3; i += 2)
             {
                 if (ZeroSpot + i < 0 || ZeroSpot + i > 8) continue;
 
-                int val = Value - (int)Math.Pow(10, ZeroSpot - 1) * (Value / (int)Math.Pow(10, (ZeroSpot - 1)) % 10);
-                GameState gState = new GameState(val);
+                int shiftAmount = 9 - (Value / (int)Math.Pow(10, ZeroSpot + i) % 10);
+                int val = Value + ((int)Math.Pow(10, ZeroSpot + i) * shiftAmount);
+                val -= shiftAmount * (int)Math.Pow(10, ZeroSpot);
+
+                GameState gState = new GameState(val, ZeroSpot + i, this);
                 moves.Add(gState);
             }
-            
+
             return moves;
         }
 
-        List<GameState> IVertexState<GameState>.GetNeighbors()
-        {
-            throw new NotImplementedException();
-        }
+
     }
 }

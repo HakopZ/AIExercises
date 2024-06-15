@@ -5,59 +5,59 @@
 
 using System.Drawing;
 
-class MyQueue<T> : IFrontier<T>
-{
+// class MyQueue<T> : IFrontier<T>
+// {
     
-    public Queue<T> backed = [];
-    public int Count => backed.Count;
+//     public Queue<T> backed = [];
+//     public int Count => backed.Count;
 
-    public void AddNode(T node, float priority)
-    {
-        backed.Enqueue(node);
-    }
+//     public void AddNode(T node, float priority)
+//     {
+//         backed.Enqueue(node);
+//     }
 
-    public T GiveMeNode()
-    {
-        return backed.Dequeue();
-    }
+//     public T GiveMeNode()
+//     {
+//         return backed.Dequeue();
+//     }
 
-    public T Peek()
-    {
-        return backed.Peek();
-    }
+//     public T Peek()
+//     {
+//         return backed.Peek();
+//     }
 
-    public bool Contains(T node)
-    {
-        return backed.Contains(node);
-    }
+//     public bool Contains(T node)
+//     {
+//         return backed.Contains(node);
+//     }
 
-}
-class MyStack<T> : IFrontier<T>
-{
-    public Stack<T> backed = [];
+// }
+// class MyStack<T> : IFrontier<T>
+// {
+//     public Stack<T> backed = [];
 
-    public int Count => backed.Count;
+//     public int Count => backed.Count;
 
-    public void AddNode(T node, float priority)
-    {
-        backed.Push(node);
-    }
+//     public void AddNode(T node, float priority)
+//     {
+//         backed.Push(node);
+//     }
 
-    public bool Contains(T node)
-    {
-        return backed.Contains(node);
-    }
+//     public bool Contains(T node)
+//     {
+//         return backed.Contains(node);
+//     }
 
-    public T GiveMeNode()
-    {
-        return backed.Pop();
-    }
+//     public T GiveMeNode()
+//     {
+//         return backed.Pop();
+//     }
 
-    public T Peek()
-    {
-        return backed.Peek();
-    }
-}
+//     public T Peek()
+//     {
+//         return backed.Peek();
+//     }
+// }
 class Program
 {
     
@@ -82,7 +82,7 @@ class Program
                 
             }
         }
-        MyQueue<Point> myQueue = new MyQueue<Point>();
+        //MyQueue<Point> myQueue = new MyQueue<Point>();
         //var path = MySearch.NewSearch<Point>(graph.FindVertex(new Point(0, 0)), graph.FindVertex(new Point(3, 3)), myQueue, MySearch.UCSPriority);
         ;
     }

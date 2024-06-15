@@ -1,6 +1,28 @@
-C:\Users\hakop.zarikyan\Source\Repos\HakopZ\AIExercises\8 Puzzle Solver\obj\Debug\net8.0\8 Puzzle Solver.csproj.AssemblyReference.cache
-C:\Users\hakop.zarikyan\Source\Repos\HakopZ\AIExercises\8 Puzzle Solver\obj\Debug\net8.0\8 Puzzle Solver.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\hakop.zarikyan\Source\Repos\HakopZ\AIExercises\8 Puzzle Solver\obj\Debug\net8.0\8 Puzzle Solver.AssemblyInfoInputs.cache
-C:\Users\hakop.zarikyan\Source\Repos\HakopZ\AIExercises\8 Puzzle Solver\obj\Debug\net8.0\8 Puzzle Solver.AssemblyInfo.cs
-C:\Users\hakop.zarikyan\Source\Repos\HakopZ\AIExercises\8 Puzzle Solver\obj\Debug\net8.0\8 Puzzle Solver.csproj.CoreCompileInputs.cache
-C:\Users\hakop.zarikyan\Source\Repos\HakopZ\AIExercises\8 Puzzle Solver\obj\Debug\net8.0\8 Puzzle Solver.sourcelink.json
+C:/Users/hakop.zarikyan/Source/Repos/HakopZ/AIExercises/8 Puzzle Solver/obj/Debug/net8.0/8 Puzzle Solver.csproj.AssemblyReference.cache
+C:/Users/hakop.zarikyan/Source/Repos/HakopZ/AIExercises/8 Puzzle Solver/obj/Debug/net8.0/8 Puzzle Solver.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/hakop.zarikyan/Source/Repos/HakopZ/AIExercises/8 Puzzle Solver/obj/Debug/net8.0/8 Puzzle Solver.AssemblyInfoInputs.cache
+C:/Users/hakop.zarikyan/Source/Repos/HakopZ/AIExercises/8 Puzzle Solver/obj/Debug/net8.0/8 Puzzle Solver.AssemblyInfo.cs
+C:/Users/hakop.zarikyan/Source/Repos/HakopZ/AIExercises/8 Puzzle Solver/obj/Debug/net8.0/8 Puzzle Solver.csproj.CoreCompileInputs.cache
+C:/Users/hakop.zarikyan/Source/Repos/HakopZ/AIExercises/8 Puzzle Solver/obj/Debug/net8.0/8 Puzzle Solver.sourcelink.json
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/8 Puzzle Solver/bin/Debug/net8.0/AICampExcersizes.deps.json
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/8 Puzzle Solver/bin/Debug/net8.0/AICampExcersizes.runtimeconfig.json
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/8 Puzzle Solver/bin/Debug/net8.0/AICampExcersizes
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/8 Puzzle Solver/bin/Debug/net8.0/8 Puzzle Solver
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/8 Puzzle Solver/bin/Debug/net8.0/8 Puzzle Solver.deps.json
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/8 Puzzle Solver/bin/Debug/net8.0/8 Puzzle Solver.runtimeconfig.json
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/8 Puzzle Solver/bin/Debug/net8.0/8 Puzzle Solver.dll
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/8 Puzzle Solver/bin/Debug/net8.0/8 Puzzle Solver.pdb
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/8 Puzzle Solver/bin/Debug/net8.0/AICampExcersizes.dll
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/8 Puzzle Solver/bin/Debug/net8.0/AICampExcersizes.pdb
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/8 Puzzle Solver/obj/Debug/net8.0/8 Puzzle Solver.csproj.AssemblyReference.cache
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/8 Puzzle Solver/obj/Debug/net8.0/8 Puzzle Solver.GeneratedMSBuildEditorConfig.editorconfig
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/8 Puzzle Solver/obj/Debug/net8.0/8 Puzzle Solver.AssemblyInfoInputs.cache
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/8 Puzzle Solver/obj/Debug/net8.0/8 Puzzle Solver.AssemblyInfo.cs
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/8 Puzzle Solver/obj/Debug/net8.0/8 Puzzle Solver.csproj.CoreCompileInputs.cache
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/8 Puzzle Solver/obj/Debug/net8.0/8 Puzzle Solver.sourcelink.json
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/8 Puzzle Solver/obj/Debug/net8.0/8 Puzzle.EEEDCA36.Up2Date
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/8 Puzzle Solver/obj/Debug/net8.0/8 Puzzle Solver.dll
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/8 Puzzle Solver/obj/Debug/net8.0/refint/8 Puzzle Solver.dll
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/8 Puzzle Solver/obj/Debug/net8.0/8 Puzzle Solver.pdb
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/8 Puzzle Solver/obj/Debug/net8.0/8 Puzzle Solver.genruntimeconfig.cache
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/8 Puzzle Solver/obj/Debug/net8.0/ref/8 Puzzle Solver.dll
