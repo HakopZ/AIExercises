@@ -1,28 +1,28 @@
 ﻿
 namespace _8_Puzzle_Solver
 {
-    public class GameStateFrontier : IFrontier<IVertexState<int>, int>
+    public class GameStateFrontier : IFrontier<IVertexState<BoardState>, BoardState>
     {
 
-        PriorityQueue<IVertexState<int>, float> priorityQueue = new();
+        PriorityQueue<IVertexState<BoardState>, float> priorityQueue = new();
         public int Count => priorityQueue.Count;
 
-        public void AddVertexState(IVertexState<int> node, float priority)
+        public void AddVertexState(IVertexState<BoardState> node, float priority)
         {
             priorityQueue.Enqueue(node, priority);
         }
 
-        public IVertexState<int> GiveNextVertexState()
+        public IVertexState<BoardState> GiveNextVertexState()
         {
             return priorityQueue.Dequeue();
         }
 
-        public IVertexState<int> Peek()
+        public IVertexState<BoardState> Peek()
         {
             return priorityQueue.Peek();    
         }
 
-        public bool Contains(IVertexState<int> node)
+        public bool Contains(IVertexState<BoardState> node)
         {
             return priorityQueue.UnorderedItems.Any(x => x.Element.Value.Equals(node.Value));
         }

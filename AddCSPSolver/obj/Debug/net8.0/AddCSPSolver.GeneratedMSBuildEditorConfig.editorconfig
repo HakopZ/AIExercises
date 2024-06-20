@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = AddCSPSolver
-build_property.ProjectDir = C:\Users\hakop.zarikyan\Source\Repos\HakopZ\AIExercises\AddCSPSolver\
+build_property.ProjectDir = /Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/AddCSPSolver/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

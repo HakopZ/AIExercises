@@ -28,18 +28,3 @@ C:/Users/hakop.zarikyan/Source/Repos/HakopZ/AIExercises/AICampExcersizes/obj/Deb
 C:/Users/hakop.zarikyan/Source/Repos/HakopZ/AIExercises/AICampExcersizes/obj/Debug/net8.0/AICampExcersizes.genruntimeconfig.cache
 C:/Users/hakop.zarikyan/Source/Repos/HakopZ/AIExercises/AICampExcersizes/obj/Debug/net8.0/ref/AICampExcersizes.dll
 /Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/AICampExcersizes/obj/Debug/net8.0/AICampExcersizes.sourcelink.json
-C:\Users\hakop.zarikyan\Source\Repos\HakopZ\AIExercises\AICampExcersizes\bin\Debug\net8.0\AICampExcersizes.exe
-C:\Users\hakop.zarikyan\Source\Repos\HakopZ\AIExercises\AICampExcersizes\bin\Debug\net8.0\AICampExcersizes.deps.json
-C:\Users\hakop.zarikyan\Source\Repos\HakopZ\AIExercises\AICampExcersizes\bin\Debug\net8.0\AICampExcersizes.runtimeconfig.json
-C:\Users\hakop.zarikyan\Source\Repos\HakopZ\AIExercises\AICampExcersizes\bin\Debug\net8.0\AICampExcersizes.dll
-C:\Users\hakop.zarikyan\Source\Repos\HakopZ\AIExercises\AICampExcersizes\bin\Debug\net8.0\AICampExcersizes.pdb
-C:\Users\hakop.zarikyan\Source\Repos\HakopZ\AIExercises\AICampExcersizes\obj\Debug\net8.0\AICampExcersizes.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\hakop.zarikyan\Source\Repos\HakopZ\AIExercises\AICampExcersizes\obj\Debug\net8.0\AICampExcersizes.AssemblyInfoInputs.cache
-C:\Users\hakop.zarikyan\Source\Repos\HakopZ\AIExercises\AICampExcersizes\obj\Debug\net8.0\AICampExcersizes.AssemblyInfo.cs
-C:\Users\hakop.zarikyan\Source\Repos\HakopZ\AIExercises\AICampExcersizes\obj\Debug\net8.0\AICampExcersizes.csproj.CoreCompileInputs.cache
-C:\Users\hakop.zarikyan\Source\Repos\HakopZ\AIExercises\AICampExcersizes\obj\Debug\net8.0\AICampExcersizes.sourcelink.json
-C:\Users\hakop.zarikyan\Source\Repos\HakopZ\AIExercises\AICampExcersizes\obj\Debug\net8.0\AICampExcersizes.dll
-C:\Users\hakop.zarikyan\Source\Repos\HakopZ\AIExercises\AICampExcersizes\obj\Debug\net8.0\refint\AICampExcersizes.dll
-C:\Users\hakop.zarikyan\Source\Repos\HakopZ\AIExercises\AICampExcersizes\obj\Debug\net8.0\AICampExcersizes.pdb
-C:\Users\hakop.zarikyan\Source\Repos\HakopZ\AIExercises\AICampExcersizes\obj\Debug\net8.0\AICampExcersizes.genruntimeconfig.cache
-C:\Users\hakop.zarikyan\Source\Repos\HakopZ\AIExercises\AICampExcersizes\obj\Debug\net8.0\ref\AICampExcersizes.dll

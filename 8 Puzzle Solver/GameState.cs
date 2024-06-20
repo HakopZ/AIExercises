@@ -1,42 +1,16 @@
 ﻿
 namespace _8_Puzzle_Solver
 {
-    public class GameState : IVertexState<int>
+    public class AgentGameState : IAgentState<BoardState, int, int>
     {
-
-        public int Value { get; set; }
-        public int ZeroSpot { get; set; }
-        public float TotalDistance { get; set; } = float.MaxValue;
-        public float Distance { get; set; } = float.MaxValue;
-        public int Weight { get; set; } = 0;
-        public IVertexState<int> Previous { get; set; }
-
-        public GameState(int val, int zeroSpot, IVertexState<int> prev)
+        public BoardState CurrentState { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public IAgentState<BoardState, int, int> Previous { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int Score { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        
+        public AgentGameState(int current, IAgentState<BoardState, int, int> previous, int score)
         {
-            Value = val;
-            Previous = prev;
-            ZeroSpot = zeroSpot;
+
+            core = score;   
         }
-
-        public List<IVertexState<int>> GetNeighbors()
-        {
-            List<IVertexState<int>> moves = [];
-
-            for (int i = -3; i <= 3; i += 2)
-            {
-                if (ZeroSpot + i < 0 || ZeroSpot + i > 8) continue;
-
-                int shiftAmount = 9 - (Value / (int)Math.Pow(10, ZeroSpot + i) % 10);
-                int val = Value + ((int)Math.Pow(10, ZeroSpot + i) * shiftAmount);
-                val -= shiftAmount * (int)Math.Pow(10, ZeroSpot);
-
-                GameState gState = new GameState(val, ZeroSpot + i, this);
-                moves.Add(gState);
-            }
-
-            return moves;
-        }
-
-
     }
 }

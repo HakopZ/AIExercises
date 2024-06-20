@@ -8,30 +8,25 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\hakop.zarikyan\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "/Users/hakopzarikyan/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\hakop.zarikyan\\Source\\Repos\\HakopZ\\AIExercises\\AICampExcersizes\\AICampExcersizes.csproj",
+      "projectUniqueName": "/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/AICampExcersizes/AICampExcersizes.csproj",
       "projectName": "AICampExcersizes",
-      "projectPath": "C:\\Users\\hakop.zarikyan\\Source\\Repos\\HakopZ\\AIExercises\\AICampExcersizes\\AICampExcersizes.csproj",
-      "packagesPath": "C:\\Users\\hakop.zarikyan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\hakop.zarikyan\\Source\\Repos\\HakopZ\\AIExercises\\AICampExcersizes\\obj\\",
+      "projectPath": "/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/AICampExcersizes/AICampExcersizes.csproj",
+      "packagesPath": "/Users/hakopzarikyan/.nuget/packages/",
+      "outputPath": "/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/AICampExcersizes/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\hakop.zarikyan\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/hakopzarikyan/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "/usr/local/share/dotnet/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -70,7 +65,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.205/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.203/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

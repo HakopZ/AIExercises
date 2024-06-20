@@ -1,0 +1,15 @@
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/AddCSPSolver/bin/Debug/net8.0/AddCSPSolver
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/AddCSPSolver/bin/Debug/net8.0/AddCSPSolver.deps.json
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/AddCSPSolver/bin/Debug/net8.0/AddCSPSolver.runtimeconfig.json
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/AddCSPSolver/bin/Debug/net8.0/AddCSPSolver.dll
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/AddCSPSolver/bin/Debug/net8.0/AddCSPSolver.pdb
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/AddCSPSolver/obj/Debug/net8.0/AddCSPSolver.GeneratedMSBuildEditorConfig.editorconfig
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/AddCSPSolver/obj/Debug/net8.0/AddCSPSolver.AssemblyInfoInputs.cache
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/AddCSPSolver/obj/Debug/net8.0/AddCSPSolver.AssemblyInfo.cs
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/AddCSPSolver/obj/Debug/net8.0/AddCSPSolver.csproj.CoreCompileInputs.cache
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/AddCSPSolver/obj/Debug/net8.0/AddCSPSolver.sourcelink.json
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/AddCSPSolver/obj/Debug/net8.0/AddCSPSolver.dll
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/AddCSPSolver/obj/Debug/net8.0/refint/AddCSPSolver.dll
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/AddCSPSolver/obj/Debug/net8.0/AddCSPSolver.pdb
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/AddCSPSolver/obj/Debug/net8.0/AddCSPSolver.genruntimeconfig.cache
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/AddCSPSolver/obj/Debug/net8.0/ref/AddCSPSolver.dll

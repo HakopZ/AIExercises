@@ -1,64 +1,38 @@
-public interface IVertexState<TValue> 
-    where TValue : IComparable<TValue>
-    {
-    public TValue Value { get; set; }
-    public IVertexState<TValue> Previous { get; set; }
-    public float TotalDistance { get; set; }
-    public float Distance { get; set; }
-    public int Weight { get; set; }
+using System.Dynamic;
+using System.Numerics;
 
-    public List<IVertexState<TValue>> GetNeighbors();
+
+public interface ITransitionCreator
+{
+    T Create<T>(T input)
+        where T : INumber<T>;
+}
+public class Succesor<TValueType>
+    where TValueType : IVertexState<TValueType>
+{
+    public INode<TValueType> FromVertex { get; set; }
+    public INode<TValueType> ToVertex { get; set; }
+    public Dictionary<Type, ITransitionCreator> Edges { get; set; }
+    public Succesor(INode<TValueType> from, INode<TValueType> to, IDictionary<Type, ITransitionCreator> edges = default)
+    {
+        Edges = edges.ToDictionary();
+    }
+    // public void AddEdge(IAgentType type, ITransitionCreator edge) => Edges.Add(type, edge);
+}
+public class IAgentType
+{
+    public string TypeValue { get; set; }
+}
+public interface IVertexState<TStateValue>
+{
+    TStateValue Value { get; set; }
 
 }
-//public
-//interface IVertexState<TValue>
-//    where TValue : struct, IComparable<TValue>;
 
-//public
-//interface IFrontier<TState, TValue>
-//    where TState : IVertexState<TValue>
-//    where TValue : struct, IComparable<TValue>
-//{
-//    bool AddNode(TState state);
-//}
+public interface INode<TValueType>
+    where TValueType : IVertexState<TValueType>
+{
 
-//class GameState : IVertexState<int>;
-
-//class GameStateFrontier : IFrontier<GameState, int>
-//{
-//    public bool AddNode(GameState state)
-//    {
-//        Console.WriteLine("Added!");
-//        return true;
-//    }
-//}
-
-//public class Searcher<TValue>
-//    where TValue : struct, IComparable<TValue>
-//{
-//    public
-//    void Search<TState, TFrontier>(TState start, TState end, TFrontier frontier, Func<TState, TState, float> selector)
-//        where TState : IVertexState<TValue>
-//        where TFrontier : IFrontier<TState, TValue>
-//    {
-
-//    }
-//}
-
-
-//public class C
-//{
-
-//    static void Main()
-//    {
-
-//        GameStateFrontier frontier = new();
-//        GameState start = new();
-//        GameState end = new();
-
-//        Searcher<int> searcher = new();
-
-//        searcher.Search(start, end, frontier, (a, b) => 0f);
-
-//    }
-//}
+    TValueType Value { get; set; }
+    public List<Succesor<TValueType>> Successors { get; set; }
+}
