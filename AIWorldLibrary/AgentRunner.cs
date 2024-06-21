@@ -1,62 +1,43 @@
+using System.ComponentModel;
+using System.Data.SqlTypes;
 using System.Drawing;
 using System.Numerics;
 using AIWorldLibrary;
-public class AgentRunner<TStateValue, TDistance, TScore>
+
+namespace AIWorldLibrary;
+public class AgentRunner<TStateValue, TCost, THeursitic>
     where TStateValue : IState
-    where TDistance : INumber<TDistance>
-    where TScore : INumber<TScore>
+    where TCost : INumber<TCost>, INullable
 {
 
-    public static List<TStateValue> RunAgent(Agent<TStateValue, TDistance, TScore> agent,
+    public static TStateValue RunAgent(Agent<TStateValue, TCost> agent,
                                                 AIEnvironment<TStateValue> environment)
     {
-        AgentState<TStateValue, TDistance, TScore> currentState = agent.CurrentState;
-        currentState.CumulativeDistance = default;
-
-        agent.Frontier.AddVertexState(currentState.EnvironmentState, 0);
-        List<TStateValue> visited = [];
-        currentState.CumulativeDistance = default;
-
-        while (agent.Frontier.Count > 0)
-        {
-            var envState = agent.Frontier.GiveNextVertexState();
-            
-            
-            if (visited.Any(x => x.Equals(currentState.EnvironmentState))) continue;
-
-            if (currentState.EnvironmentState.Equals(environment.GoalState.Value)) break;
-
-            visited.Add(currentState.EnvironmentState);
-
-            var sucessors = environment.GetSuccesors(currentState.EnvironmentState, agent.GetType());
-            foreach (var nextState in sucessors)
-            {
-                var getCostMethod = nextState.GetType().GetMethod("GetCost");
-                var genericMethod = getCostMethod.MakeGenericMethod(environment.AgentTypesToCostType[agent.GetType()]);
-                TDistance cost = (TDistance)genericMethod.Invoke(agent, [agent.GetType()]);
-                
-                
-                float tentative =  + curr.Previous.TotalDistance;
         
-                float priority = agent.FindPriority(currentState, nextState, visited);
+        if (agent.CurrentState.EnvironmentState.Equals(environment.GoalState.State)) return agent.CurrentState.EnvironmentState;
+        
 
-                if (priority == int.MinValue) continue;
+        
+        int lookAhead = Math.Min(agent.LookAhead, environment.FindLookAheadAmount(agent.CurrentState.EnvironmentState));
+        
+        var nextBestState = agent.SelectState(lookAhead);
 
-                if (!agent.Frontier.Contains(nextState))
-                {
-                    agent.Frontier.AddVertexState(nextState, priority);
-                }
-            }
-        }
+        var newEnvironmentState = environment.MakeMove(nextBestState.EnvironmentState);
+        
+        var actualState = agent.Move(newEnvironmentState);
+        
+        TCost totalCost = agent.CurrentState.CumulativeCost + agent.GetCost(agent.CurrentState.EnvironmentState, actualState);
+        
+        var agentState = new AgentState<TStateValue, TCost>(actualState, totalCost, agent.CurrentState);
 
-        Stack<IVertexState<TStateValue>> stack = [];
-        while (currentState != null)
-        {
-            stack.Push(currentState);
-            currentState = currentState.Previous;
-        }
-        return stack.ToList();
+        var sucessors = environment.GetSuccesors(actualState);
+        
+        agent.AddSuccessors(sucessors);
 
+        agent.Frontier.Clear();
+        agent.CurrentState = agentState;
+
+        return newEnvironmentState;
     }
 
     // public static int BFSAndDFSPriority(IVertexState<TStateValue> curr, IVertexState<TStateValue> next, List<IVertexState<TStateValue>> visited)

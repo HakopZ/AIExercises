@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("8 Puzzle Solver")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7bf31cc3cbfe26a8d66dd420d2f8cfbac066daea")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6d45a0ef044f959a38e0456f2cddc6b72e913186")]
 [assembly: System.Reflection.AssemblyProductAttribute("8 Puzzle Solver")]
 [assembly: System.Reflection.AssemblyTitleAttribute("8 Puzzle Solver")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
