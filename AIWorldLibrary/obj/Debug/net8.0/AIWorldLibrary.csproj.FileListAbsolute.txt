@@ -1,0 +1,12 @@
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/AIWorldLibrary/bin/Debug/net8.0/AIWorldLibrary.deps.json
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/AIWorldLibrary/bin/Debug/net8.0/AIWorldLibrary.dll
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/AIWorldLibrary/bin/Debug/net8.0/AIWorldLibrary.pdb
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/AIWorldLibrary/obj/Debug/net8.0/AIWorldLibrary.GeneratedMSBuildEditorConfig.editorconfig
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/AIWorldLibrary/obj/Debug/net8.0/AIWorldLibrary.AssemblyInfoInputs.cache
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/AIWorldLibrary/obj/Debug/net8.0/AIWorldLibrary.AssemblyInfo.cs
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/AIWorldLibrary/obj/Debug/net8.0/AIWorldLibrary.csproj.CoreCompileInputs.cache
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/AIWorldLibrary/obj/Debug/net8.0/AIWorldLibrary.sourcelink.json
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/AIWorldLibrary/obj/Debug/net8.0/AIWorldLibrary.dll
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/AIWorldLibrary/obj/Debug/net8.0/refint/AIWorldLibrary.dll
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/AIWorldLibrary/obj/Debug/net8.0/AIWorldLibrary.pdb
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/AIWorldLibrary/obj/Debug/net8.0/ref/AIWorldLibrary.dll

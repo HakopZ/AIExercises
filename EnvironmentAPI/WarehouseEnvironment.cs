@@ -1,7 +1,23 @@
 using System.Drawing;
 using AIWorldLibrary;
+using EnvironmentAPI;
 
 namespace EnvironmentAPI;
+
+[Flags]
+public enum MovementPermissions
+{
+    None = 0,
+    Directional = 1 << 0,
+    Diagonal = 1 << 1,
+}
+
+[Flags]
+public enum SensorPermissions
+{
+    None = 0,
+    Position = 1 << 0
+}
 public enum SpotState
 {
     Empty = 200,
@@ -22,17 +38,51 @@ public class Edge(Vertex from, Vertex to, int cost = 1)
     public Vertex To { get; set; } = to;
     public int Cost { get; set; } = cost;
 }
-public class WarehouseEnvironment : AIEnvironment<EnvironmentState>
+
+public class WarehouseEnvironment : AIEnvironment<EnvironmentState, MovementPermissions, SensorPermissions>
 {
-    public override bool isStatic => false;
-    public override bool isDeterministic => true;
+    public override bool IsStatic => false;
+    public override bool IsDeterministic => true;
     public List<Vertex> Vertices { get; set; } = [];
     public List<Edge> Edges { get; set; } = [];
 
-    public void Clear()
+    public override Dictionary<SensorPermissions, Func<EnvironmentState, object?>> SensorCapabilities => sensorCapabilties;
+
+    public override Dictionary<MovementPermissions, Func<EnvironmentState, List<EnvironmentState>>> MovementCapabilities => movementCapabilities;
+    public Dictionary<SensorPermissions, Func<EnvironmentState, object?>> sensorCapabilties = new()
+    {
+        { SensorPermissions.None, (state) => null },
+        { SensorPermissions.Position, (state) => state.RobotLocation } //issue with this ask stan, techincally agent already has this, but I don't want them to, so should make move be null?
+    };
+
+    public Dictionary<MovementPermissions, Func<EnvironmentState, List<EnvironmentState>>> movementCapabilities = new()
+    {
+        { MovementPermissions.None, (state) => [state] },
+
+        { MovementPermissions.Directional, (state) => [
+            new EnvironmentState (new Point (state.RobotLocation.X - 1, state.RobotLocation.Y)), 
+            new EnvironmentState (new Point (state.RobotLocation.X + 1, state.RobotLocation.Y)),
+            new EnvironmentState (new Point (state.RobotLocation.X, state.RobotLocation.Y - 1)),
+            new EnvironmentState (new Point (state.RobotLocation.X, state.RobotLocation.Y + 1)),
+        ]},
+
+        { MovementPermissions.Diagonal, (state) => [
+            new EnvironmentState (new Point (state.RobotLocation.X - 1, state.RobotLocation.Y - 1)),
+            new EnvironmentState (new Point (state.RobotLocation.X + 1, state.RobotLocation.Y - 1)),
+            new EnvironmentState (new Point (state.RobotLocation.X - 1, state.RobotLocation.Y + 1)),
+            new EnvironmentState (new Point (state.RobotLocation.X + 1, state.RobotLocation.Y + 1)),
+        
+        ]}
+    };
+    public void ClearEnvironment()
     {
         Vertices.Clear();
         Edges.Clear();
+    }
+    public void ClearAgentPermissions()
+    {
+        AgentIDToMovementCapabilities.Clear();
+        AgentIDToSensorCapabilities.Clear();
     }
     public bool TryAddVertex(Point location, SpotState state)
     {
@@ -73,16 +123,37 @@ public class WarehouseEnvironment : AIEnvironment<EnvironmentState>
     {
         throw new NotImplementedException();
     }
-
-    public override List<Succesor<EnvironmentState>> GetSuccesors(EnvironmentState state)
+    
+    public override List<Succesor<EnvironmentState>> GetSuccesors(EnvironmentState state, int agentID)
     {
         Vertex robotVertex = Search(state.RobotLocation) ?? throw new NullReferenceException("Robot has to be in the environment");
 
         List<Succesor<EnvironmentState>> succesors = [];
-
-        foreach (var edge in robotVertex.Edges)
+        
+        var movementPermissions = AgentIDToMovementCapabilities[agentID];
+        for (int i = 1; i < 2; i <<= 1)
         {
-            EnvironmentState newState = new(edge.To.Location, (int)edge.To.State);
+            MovementPermissions permission = (MovementPermissions)i;
+            if(movementPermissions.HasFlag(permission))
+            {
+                var movement = MovementCapabilities[movementPermissions];
+                var newStates = movement(state);
+                foreach(var nextState in newStates)
+                {
+                    Dictionary<EnvironmentState, double> chance = new()
+                    {
+                        { nextState, 1 },
+                    };
+                    Succesor<EnvironmentState> succesor = new (state, chance);
+                    succesors.Add(succesor);
+                }
+            }
+        } 
+        return succesors;
+
+        /*foreach (var edge in robotVertex.Edges)
+        {
+            EnvironmentState newState = new(edge.To.Location);
             Dictionary<EnvironmentState, double> map = new()
             {
                 {newState, 1}
@@ -91,7 +162,7 @@ public class WarehouseEnvironment : AIEnvironment<EnvironmentState>
             succesors.Add(succesor);
         }
 
-        return succesors;
+        return succesors;*/
     }
 
 

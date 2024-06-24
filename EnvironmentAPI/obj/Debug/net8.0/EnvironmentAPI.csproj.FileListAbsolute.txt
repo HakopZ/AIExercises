@@ -32,3 +32,5 @@
 /Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/EnvironmentAPI/obj/Debug/net8.0/EnvironmentAPI.pdb
 /Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/EnvironmentAPI/obj/Debug/net8.0/EnvironmentAPI.genruntimeconfig.cache
 /Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/EnvironmentAPI/obj/Debug/net8.0/ref/EnvironmentAPI.dll
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/EnvironmentAPI/bin/Debug/net8.0/AIWorldLibrary.dll
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/EnvironmentAPI/bin/Debug/net8.0/AIWorldLibrary.pdb

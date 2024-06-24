@@ -16,7 +16,7 @@ public class EnvironmentController : ControllerBase
     }
     private void DefaultGraph()
     {
-        warehouseEnvironment.Clear();
+        warehouseEnvironment.ClearEnvironment();
         for (int i = 0; i < 5; i++)
         {
             for (int j = 0; j < 5; j++)
@@ -33,6 +33,14 @@ public class EnvironmentController : ControllerBase
         }
     }
 
+    //JUST FOR TESTING
+    [HttpGet("GetEnvironment")]
+    public ActionResult<WarehouseEnvironment> GetEnvironment()
+    {
+        return Ok(warehouseEnvironment);
+    }
+
+
     [HttpPost("LoadEnvironment")]
     public IActionResult LoadOfficeEnvironment([FromBody] WarehouseEnvironment environment)
     {
@@ -44,7 +52,8 @@ public class EnvironmentController : ControllerBase
 
         return BadRequest();
     }
-    
+    //[HttpPost]
+    //public IActionResult RegisterAgent([FromBody] )
     [HttpGet("MakeMove")]
     public ActionResult<EnvironmentState> MakeMove([FromBody] EnvironmentState state)
     {
@@ -61,11 +70,11 @@ public class EnvironmentController : ControllerBase
     {
         if(ModelState.IsValid)
         {
-            return Ok(warehouseEnvironment.GetSuccesors(state));
+            //return Ok(warehouseEnvironment.GetSuccesors(state));
         }
 
         return BadRequest();
     }
 
-    
+
 }
