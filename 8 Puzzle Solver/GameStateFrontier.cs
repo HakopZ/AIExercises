@@ -1,7 +1,9 @@
 ﻿
+using AIWorldLibrary;
+
 namespace _8_Puzzle_Solver
 {
-    public class GameStateFrontier : IFrontier<IVertexState<BoardState>, BoardState>
+    public class GameStateFrontier : IFrontier<
     {
 
         PriorityQueue<IVertexState<BoardState>, float> priorityQueue = new();
