@@ -4,6 +4,9 @@ using EnvironmentAPI;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
+namespace EnvironmentAPI;
+public record AgentSensorRegister(int AgentID, SensorPermissions SensorPermissions);
+public record AgentMovementRegister(int AgentID, MovementPermissions MovePermissions);
 [ApiController]
 public class EnvironmentController : ControllerBase
 {
@@ -52,8 +55,42 @@ public class EnvironmentController : ControllerBase
 
         return BadRequest();
     }
-    //[HttpPost]
-    //public IActionResult RegisterAgent([FromBody] )
+    [HttpPost("RegisterAgent")]
+    public ActionResult<int> RegisterAgent([FromBody] Agent agent)
+    {
+        if (ModelState.IsValid)
+        {
+            int agentID = warehouseEnvironment.RegisterAgent(agent);
+            return Ok(agentID);
+        }
+
+        return BadRequest();
+    }
+
+    [HttpPost("RegisterSensorPermission")]
+    public IActionResult RegisterAgentSensors([FromBody] AgentSensorRegister model)
+    {
+        if(ModelState.IsValid)
+        {
+            warehouseEnvironment.RegisterAgentSensorPermissions(model.AgentID, model.SensorPermissions); //might need to make this a boolean
+            return Ok();
+        }
+
+        return BadRequest();
+    }
+
+    [HttpPost("RegisterMovementPermission")]
+    public IActionResult RegisterAgentMovement([FromBody] AgentMovementRegister model)
+    {
+        if (ModelState.IsValid)
+        {
+            warehouseEnvironment.RegisterAgentMovementPermissions(model.AgentID, model.MovePermissions);
+            return Ok();
+        }
+
+        return BadRequest();
+    }
+
     [HttpGet("MakeMove")]
     public ActionResult<EnvironmentState> MakeMove([FromBody] EnvironmentState state)
     {
@@ -65,6 +102,24 @@ public class EnvironmentController : ControllerBase
         return BadRequest();
     }
 
+
+    [HttpGet("GetSensorPermissions")]
+    public ActionResult<SensorPermissions> GetSensorPermissions(int agentID)
+    {
+        if (!warehouseEnvironment.AgentToID.ContainsValue(agentID)) return BadRequest();
+        
+        return Ok(warehouseEnvironment.AgentIDToSensorCapabilities[agentID]);
+    }
+
+    [HttpGet("GetMovementPermissions")]
+    public ActionResult<MovementPermissions> GetMovementPermissions(int agentID)
+    {
+        if (!warehouseEnvironment.AgentToID.ContainsValue(agentID)) return BadRequest();
+
+        return Ok(warehouseEnvironment.AgentIDToMovementCapabilities[agentID]);
+    }
+
+/*
     [HttpGet("GetSuccessors")]
     public ActionResult<List<Succesor<EnvironmentState>>> GenerateSuccesors([FromBody] EnvironmentState state)
     {
@@ -74,7 +129,7 @@ public class EnvironmentController : ControllerBase
         }
 
         return BadRequest();
-    }
+    }*/
 
 
 }

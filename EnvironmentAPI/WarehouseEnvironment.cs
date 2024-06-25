@@ -4,19 +4,63 @@ using EnvironmentAPI;
 
 namespace EnvironmentAPI;
 
-[Flags]
-public enum MovementPermissions
+
+public class MovementPermissions : BetterEnum
 {
-    None = 0,
-    Directional = 1 << 0,
-    Diagonal = 1 << 1,
+
+    public static readonly MovementPermissions None = new() { Value = 0 };
+    public static readonly MovementPermissions Directional = new() { Value = 1 << 0 };
+    public static readonly MovementPermissions Diagonal = new() { Value = 1 << 1 };
+
+    private int _value = None.Value;
+    public override int Value
+    {
+        get => _value;
+        set
+        {
+            if (value >= 0 && value <= Diagonal.Value)
+            {
+                _value = value;
+            }
+        }
+    }
+
+    public override BetterEnum And(int val)
+    {
+        var mP = new MovementPermissions
+        {
+            Value = Value & val
+        };
+        return mP;
+    }
 }
 
-[Flags]
-public enum SensorPermissions
+
+public class SensorPermissions : BetterEnum
 {
-    None = 0,
-    Position = 1 << 0
+    public static readonly SensorPermissions None = new() { Value = 0 };
+    public static readonly SensorPermissions Position = new() { Value = 1 << 0 };
+    private int _value = None.Value;
+    public override int Value
+    {
+        get => _value;
+        set
+        {
+            if (value >= 0 && value <= Position.Value)
+            {
+                _value = value;
+            }
+        }
+    }
+
+    public override BetterEnum And(int val)
+    {
+        var mP = new MovementPermissions
+        {
+            Value = Value & val
+        };
+        return mP;
+    }
 }
 public enum SpotState
 {
@@ -39,6 +83,10 @@ public class Edge(Vertex from, Vertex to, int cost = 1)
     public int Cost { get; set; } = cost;
 }
 
+public record PointInfo(Point Location) : ISensorData;
+
+public record Nothing : ISensorData;
+
 public class WarehouseEnvironment : AIEnvironment<EnvironmentState, MovementPermissions, SensorPermissions>
 {
     public override bool IsStatic => false;
@@ -46,13 +94,16 @@ public class WarehouseEnvironment : AIEnvironment<EnvironmentState, MovementPerm
     public List<Vertex> Vertices { get; set; } = [];
     public List<Edge> Edges { get; set; } = [];
 
-    public override Dictionary<SensorPermissions, Func<EnvironmentState, object?>> SensorCapabilities => sensorCapabilties;
+    public override Dictionary<SensorPermissions, Func<EnvironmentState, ISensorData>> SensorCapabilities => sensorCapabilties;
 
     public override Dictionary<MovementPermissions, Func<EnvironmentState, List<EnvironmentState>>> MovementCapabilities => movementCapabilities;
-    public Dictionary<SensorPermissions, Func<EnvironmentState, object?>> sensorCapabilties = new()
+
+    
+
+    public Dictionary<SensorPermissions, Func<EnvironmentState, ISensorData>> sensorCapabilties = new()
     {
-        { SensorPermissions.None, (state) => null },
-        { SensorPermissions.Position, (state) => state.RobotLocation } //issue with this ask stan, techincally agent already has this, but I don't want them to, so should make move be null?
+        { SensorPermissions.None, (state) => new Nothing() },
+        { SensorPermissions.Position, (state) => new PointInfo(state.RobotLocation) } //issue with this ask stan, techincally agent already has this, but I don't want them to, so should make move be null?
     };
 
     public Dictionary<MovementPermissions, Func<EnvironmentState, List<EnvironmentState>>> movementCapabilities = new()
@@ -60,7 +111,7 @@ public class WarehouseEnvironment : AIEnvironment<EnvironmentState, MovementPerm
         { MovementPermissions.None, (state) => [state] },
 
         { MovementPermissions.Directional, (state) => [
-            new EnvironmentState (new Point (state.RobotLocation.X - 1, state.RobotLocation.Y)), 
+            new EnvironmentState (new Point (state.RobotLocation.X - 1, state.RobotLocation.Y)),
             new EnvironmentState (new Point (state.RobotLocation.X + 1, state.RobotLocation.Y)),
             new EnvironmentState (new Point (state.RobotLocation.X, state.RobotLocation.Y - 1)),
             new EnvironmentState (new Point (state.RobotLocation.X, state.RobotLocation.Y + 1)),
@@ -71,7 +122,7 @@ public class WarehouseEnvironment : AIEnvironment<EnvironmentState, MovementPerm
             new EnvironmentState (new Point (state.RobotLocation.X + 1, state.RobotLocation.Y - 1)),
             new EnvironmentState (new Point (state.RobotLocation.X - 1, state.RobotLocation.Y + 1)),
             new EnvironmentState (new Point (state.RobotLocation.X + 1, state.RobotLocation.Y + 1)),
-        
+
         ]}
     };
     public void ClearEnvironment()
@@ -119,56 +170,53 @@ public class WarehouseEnvironment : AIEnvironment<EnvironmentState, MovementPerm
     }
 
     public Vertex? Search(Point location) => Vertices.Find(x => x.Location == location);
-    public override int FindLookAheadAmount(EnvironmentState state)
-    {
-        throw new NotImplementedException();
-    }
-    
-    public override List<Succesor<EnvironmentState>> GetSuccesors(EnvironmentState state, int agentID)
-    {
-        Vertex robotVertex = Search(state.RobotLocation) ?? throw new NullReferenceException("Robot has to be in the environment");
 
-        List<Succesor<EnvironmentState>> succesors = [];
-        
-        var movementPermissions = AgentIDToMovementCapabilities[agentID];
-        for (int i = 1; i < 2; i <<= 1)
+    public override List<(int moveId, double chance)> GetMoves(EnvironmentState state, int agentID)
+    {
+        if (!IDToAgent.ContainsKey(agentID)) throw new ArgumentException("Agent is not registered");
+
+        if (!AgentIDToMovementCapabilities.ContainsKey(agentID)) throw new ArgumentException("Movements are not registered for the ID");
+
+        var movementPermission = AgentIDToMovementCapabilities[agentID];
+
+         
+    }
+
+
+
+    /*
+        public override List<Succesor<EnvironmentState>> G(EnvironmentState state, int agentID)
         {
-            MovementPermissions permission = (MovementPermissions)i;
-            if(movementPermissions.HasFlag(permission))
+            Vertex robotVertex = Search(state.RobotLocation) ?? throw new NullReferenceException("Robot has to be in the environment");
+
+            List<Succesor<EnvironmentState>> succesors = [];
+
+            var movementPermissions = AgentIDToMovementCapabilities[agentID];
+            for (int i = 1; i < 2; i <<= 1)
             {
-                var movement = MovementCapabilities[movementPermissions];
-                var newStates = movement(state);
-                foreach(var nextState in newStates)
+                MovementPermissions permission = (MovementPermissions)i;
+                if (movementPermissions.HasFlag(permission))
                 {
-                    Dictionary<EnvironmentState, double> chance = new()
+                    var movement = MovementCapabilities[movementPermissions];
+                    var newStates = movement(state);
+                    foreach (var nextState in newStates)
                     {
-                        { nextState, 1 },
-                    };
-                    Succesor<EnvironmentState> succesor = new (state, chance);
-                    succesors.Add(succesor);
+                        Dictionary<EnvironmentState, double> chance = new()
+                        {
+                            { nextState, 1 },
+                        };
+                        Succesor<EnvironmentState> succesor = new(state, chance);
+                        succesors.Add(succesor);
+                    }
                 }
             }
-        } 
-        return succesors;
-
-        /*foreach (var edge in robotVertex.Edges)
-        {
-            EnvironmentState newState = new(edge.To.Location);
-            Dictionary<EnvironmentState, double> map = new()
-            {
-                {newState, 1}
-            };
-            Succesor<EnvironmentState> succesor = new(state, map);
-            succesors.Add(succesor);
-        }
-
-        return succesors;*/
-    }
+            return succesors;
 
 
-    //no chance for environment right now (will add later)
-    public override EnvironmentState MakeMove(EnvironmentState state)
-    {
-        return state;
-    }
+        }*/
+
+
+    //no chance for environment right now (will add later
+
+
 }
