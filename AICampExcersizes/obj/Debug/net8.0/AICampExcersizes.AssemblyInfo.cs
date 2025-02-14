@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AICampExcersizes")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ea26196b5d8f9c061ec5182b2e711ea7105fcd3e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f12663085ae0713062e596b6faed7009dca14a43")]
 [assembly: System.Reflection.AssemblyProductAttribute("AICampExcersizes")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AICampExcersizes")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

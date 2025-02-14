@@ -1,0 +1,198 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/WarehouseAgent/WarehouseAgent.csproj": {}
+  },
+  "projects": {
+    "/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/AIWorldLibrary/AIWorldLibrary.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/AIWorldLibrary/AIWorldLibrary.csproj",
+        "projectName": "AIWorldLibrary",
+        "projectPath": "/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/AIWorldLibrary/AIWorldLibrary.csproj",
+        "packagesPath": "/Users/hakopzarikyan/.nuget/packages/",
+        "outputPath": "/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/AIWorldLibrary/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/hakopzarikyan/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.203/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/NeuralNetworkLibrary/NeuralNetworkLibrary.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/NeuralNetworkLibrary/NeuralNetworkLibrary.csproj",
+        "projectName": "NeuralNetworkLibrary",
+        "projectPath": "/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/NeuralNetworkLibrary/NeuralNetworkLibrary.csproj",
+        "packagesPath": "/Users/hakopzarikyan/.nuget/packages/",
+        "outputPath": "/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/NeuralNetworkLibrary/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/hakopzarikyan/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "MathNet.Numerics": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.203/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/WarehouseAgent/WarehouseAgent.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/WarehouseAgent/WarehouseAgent.csproj",
+        "projectName": "WarehouseAgent",
+        "projectPath": "/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/WarehouseAgent/WarehouseAgent.csproj",
+        "packagesPath": "/Users/hakopzarikyan/.nuget/packages/",
+        "outputPath": "/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/WarehouseAgent/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/hakopzarikyan/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/AIWorldLibrary/AIWorldLibrary.csproj": {
+                "projectPath": "/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/AIWorldLibrary/AIWorldLibrary.csproj"
+              },
+              "/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/NeuralNetworkLibrary/NeuralNetworkLibrary.csproj": {
+                "projectPath": "/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/NeuralNetworkLibrary/NeuralNetworkLibrary.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.203/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

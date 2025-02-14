@@ -10,14 +10,16 @@ public class Game1 : Core
 
     public Game1()
         : base()
-    {
-    }
+    {}
 
     protected override void Initialize()
     {
         // TODO: Add your initialization logic here
 
         base.Initialize();
+        var scene = Scene.createWithDefaultRenderer(Color.CornflowerBlue);
+        Core.scene = scene;
+
     }
 
    

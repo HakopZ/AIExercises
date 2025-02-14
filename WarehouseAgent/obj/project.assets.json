@@ -1,0 +1,152 @@
+{
+  "version": 3,
+  "targets": {
+    "net8.0": {
+      "MathNet.Numerics/5.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/MathNet.Numerics.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/MathNet.Numerics.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "AIWorldLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/AIWorldLibrary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AIWorldLibrary.dll": {}
+        }
+      },
+      "NeuralNetworkLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "MathNet.Numerics": "5.0.0"
+        },
+        "compile": {
+          "bin/placeholder/NeuralNetworkLibrary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/NeuralNetworkLibrary.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MathNet.Numerics/5.0.0": {
+      "sha512": "pg1W2VwaEQMAiTpGK840hZgzavnqjlCMTVSbtVCXVyT+7AX4mc1o89SPv4TBlAjhgCOo9c1Y+jZ5m3ti2YgGgA==",
+      "type": "package",
+      "path": "mathnet.numerics/5.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "icon.png",
+        "lib/net461/MathNet.Numerics.dll",
+        "lib/net461/MathNet.Numerics.xml",
+        "lib/net48/MathNet.Numerics.dll",
+        "lib/net48/MathNet.Numerics.xml",
+        "lib/net5.0/MathNet.Numerics.dll",
+        "lib/net5.0/MathNet.Numerics.xml",
+        "lib/net6.0/MathNet.Numerics.dll",
+        "lib/net6.0/MathNet.Numerics.xml",
+        "lib/netstandard2.0/MathNet.Numerics.dll",
+        "lib/netstandard2.0/MathNet.Numerics.xml",
+        "mathnet.numerics.5.0.0.nupkg.sha512",
+        "mathnet.numerics.nuspec"
+      ]
+    },
+    "AIWorldLibrary/1.0.0": {
+      "type": "project",
+      "path": "../AIWorldLibrary/AIWorldLibrary.csproj",
+      "msbuildProject": "../AIWorldLibrary/AIWorldLibrary.csproj"
+    },
+    "NeuralNetworkLibrary/1.0.0": {
+      "type": "project",
+      "path": "../NeuralNetworkLibrary/NeuralNetworkLibrary.csproj",
+      "msbuildProject": "../NeuralNetworkLibrary/NeuralNetworkLibrary.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net8.0": [
+      "AIWorldLibrary >= 1.0.0",
+      "NeuralNetworkLibrary >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "/Users/hakopzarikyan/.nuget/packages/": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/WarehouseAgent/WarehouseAgent.csproj",
+      "projectName": "WarehouseAgent",
+      "projectPath": "/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/WarehouseAgent/WarehouseAgent.csproj",
+      "packagesPath": "/Users/hakopzarikyan/.nuget/packages/",
+      "outputPath": "/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/WarehouseAgent/obj/",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "/Users/hakopzarikyan/.nuget/NuGet/NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net8.0"
+      ],
+      "sources": {
+        "/usr/local/share/dotnet/library-packs": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "projectReferences": {
+            "/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/AIWorldLibrary/AIWorldLibrary.csproj": {
+              "projectPath": "/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/AIWorldLibrary/AIWorldLibrary.csproj"
+            },
+            "/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/NeuralNetworkLibrary/NeuralNetworkLibrary.csproj": {
+              "projectPath": "/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/NeuralNetworkLibrary/NeuralNetworkLibrary.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      }
+    },
+    "frameworks": {
+      "net8.0": {
+        "targetAlias": "net8.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.203/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

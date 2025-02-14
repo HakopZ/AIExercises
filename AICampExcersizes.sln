@@ -15,6 +15,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpectiMax", "ExpectiMax\Ex
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnvironmentAPI", "EnvironmentAPI\EnvironmentAPI.csproj", "{4F6A060C-EC63-4A77-A539-6FE1C50EF43C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgentEnvironmentVisualizer", "AgentEnvironmentVisualizer\AgentEnvironmentVisualizer.csproj", "{FA6DC07B-B7CB-488B-B99A-B3D148747BBE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarehouseAgent", "WarehouseAgent\WarehouseAgent.csproj", "{A7E33DF5-960B-450A-92F2-5A97E3FF62BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeuralNetworkLibrary", "NeuralNetworkLibrary\NeuralNetworkLibrary.csproj", "{C1A969AB-B620-4EC4-B358-409C2174145F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Environments", "Environments\Environments.csproj", "{B7892C44-15D7-4347-8710-8FF2BC2F1652}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BayesGhostCatcher", "BayesGhostCatcher\BayesGhostCatcher.csproj", "{16E89AE3-9A6C-469E-A55A-3A5D6647BEF6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +55,26 @@ Global
 		{4F6A060C-EC63-4A77-A539-6FE1C50EF43C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F6A060C-EC63-4A77-A539-6FE1C50EF43C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F6A060C-EC63-4A77-A539-6FE1C50EF43C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA6DC07B-B7CB-488B-B99A-B3D148747BBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA6DC07B-B7CB-488B-B99A-B3D148747BBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA6DC07B-B7CB-488B-B99A-B3D148747BBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA6DC07B-B7CB-488B-B99A-B3D148747BBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7E33DF5-960B-450A-92F2-5A97E3FF62BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7E33DF5-960B-450A-92F2-5A97E3FF62BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7E33DF5-960B-450A-92F2-5A97E3FF62BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7E33DF5-960B-450A-92F2-5A97E3FF62BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1A969AB-B620-4EC4-B358-409C2174145F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1A969AB-B620-4EC4-B358-409C2174145F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1A969AB-B620-4EC4-B358-409C2174145F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1A969AB-B620-4EC4-B358-409C2174145F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7892C44-15D7-4347-8710-8FF2BC2F1652}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7892C44-15D7-4347-8710-8FF2BC2F1652}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7892C44-15D7-4347-8710-8FF2BC2F1652}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7892C44-15D7-4347-8710-8FF2BC2F1652}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16E89AE3-9A6C-469E-A55A-3A5D6647BEF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16E89AE3-9A6C-469E-A55A-3A5D6647BEF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16E89AE3-9A6C-469E-A55A-3A5D6647BEF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16E89AE3-9A6C-469E-A55A-3A5D6647BEF6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

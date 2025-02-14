@@ -1,0 +1,16 @@
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/Environments/bin/Debug/net8.0/Environments.deps.json
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/Environments/bin/Debug/net8.0/Environments.dll
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/Environments/bin/Debug/net8.0/Environments.pdb
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/Environments/bin/Debug/net8.0/AIWorldLibrary.dll
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/Environments/bin/Debug/net8.0/AIWorldLibrary.pdb
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/Environments/obj/Debug/net8.0/Environments.csproj.AssemblyReference.cache
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/Environments/obj/Debug/net8.0/Environments.GeneratedMSBuildEditorConfig.editorconfig
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/Environments/obj/Debug/net8.0/Environments.AssemblyInfoInputs.cache
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/Environments/obj/Debug/net8.0/Environments.AssemblyInfo.cs
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/Environments/obj/Debug/net8.0/Environments.csproj.CoreCompileInputs.cache
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/Environments/obj/Debug/net8.0/Environments.sourcelink.json
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/Environments/obj/Debug/net8.0/Environm.E3B17F26.Up2Date
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/Environments/obj/Debug/net8.0/Environments.dll
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/Environments/obj/Debug/net8.0/refint/Environments.dll
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/Environments/obj/Debug/net8.0/Environments.pdb
+/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/Environments/obj/Debug/net8.0/ref/Environments.dll

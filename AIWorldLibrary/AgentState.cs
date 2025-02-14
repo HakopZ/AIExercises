@@ -2,7 +2,7 @@ using System.Numerics;
 
 namespace AIWorldLibrary;
 
-public interface AgentState
+public abstract class AgentState
 {
     
 }

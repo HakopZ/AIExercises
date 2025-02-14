@@ -117,6 +117,19 @@
         "runtime": {
           "bin/placeholder/AIWorldLibrary.dll": {}
         }
+      },
+      "Environments/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "AIWorldLibrary": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Environments.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Environments.dll": {}
+        }
       }
     }
   },
@@ -488,11 +501,17 @@
       "type": "project",
       "path": "../AIWorldLibrary/AIWorldLibrary.csproj",
       "msbuildProject": "../AIWorldLibrary/AIWorldLibrary.csproj"
+    },
+    "Environments/1.0.0": {
+      "type": "project",
+      "path": "../Environments/Environments.csproj",
+      "msbuildProject": "../Environments/Environments.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
       "AIWorldLibrary >= 1.0.0",
+      "Environments >= 1.0.0",
       "Microsoft.AspNetCore.OpenApi >= 8.0.6",
       "Swashbuckle.AspNetCore >= 6.6.2"
     ]
@@ -525,6 +544,9 @@
           "projectReferences": {
             "/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/AIWorldLibrary/AIWorldLibrary.csproj": {
               "projectPath": "/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/AIWorldLibrary/AIWorldLibrary.csproj"
+            },
+            "/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/Environments/Environments.csproj": {
+              "projectPath": "/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/Environments/Environments.csproj"
             }
           }
         }

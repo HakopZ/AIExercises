@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AIWorld")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7bf31cc3cbfe26a8d66dd420d2f8cfbac066daea")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f12663085ae0713062e596b6faed7009dca14a43")]
 [assembly: System.Reflection.AssemblyProductAttribute("AIWorld")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AIWorld")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

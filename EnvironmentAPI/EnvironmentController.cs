@@ -1,47 +1,38 @@
 
+using System.Runtime.CompilerServices;
 using AIWorldLibrary;
 using EnvironmentAPI;
+using Environments;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EnvironmentAPI;
-public record AgentSensorRegister(int AgentID, SensorPermissions SensorPermissions);
-public record AgentMovementRegister(int AgentID, MovementPermissions MovePermissions);
+public record AgentSensorRegister(int AgentID, WarehouseSensorPermissions SensorPermissions);
+public record AgentMovementRegister(int AgentID, WarehouseMovementPermissions MovePermissions);
+public record MoveModel(int AgentID, int MoveID);
+
 [ApiController]
 public class EnvironmentController : ControllerBase
 {
     public ILogger MyLogger { get; set; }
-    public WarehouseEnvironment warehouseEnvironment { get; set; } = new WarehouseEnvironment();
-    public EnvironmentController(ILogger logger)
+    public WarehouseEnvironment MywarehouseEnvironment;
+    public EnvironmentController(ILogger logger, WarehouseEnvironment myWarehouseEnviroment)
     {
         MyLogger = logger;
-        DefaultGraph();
+        MywarehouseEnvironment = myWarehouseEnviroment;
     }
-    private void DefaultGraph()
+    private bool IsPowerOfTwo(int x)
     {
-        warehouseEnvironment.ClearEnvironment();
-        for (int i = 0; i < 5; i++)
-        {
-            for (int j = 0; j < 5; j++)
-            {
-                if (i != 4 || j != 4)
-                {
-                    warehouseEnvironment.TryAddVertex(new(i, j), SpotState.Empty);
-                }
-                else
-                {
-                    warehouseEnvironment.TryAddVertex(new(i, j), SpotState.Item);
-                }
-            }
-        }
+        return (x & (x - 1)) == 0;
     }
 
+    /*
     //JUST FOR TESTING
     [HttpGet("GetEnvironment")]
     public ActionResult<WarehouseEnvironment> GetEnvironment()
     {
-        return Ok(warehouseEnvironment);
-    }
+        return Ok(MywarehouseEnvironment);
+    }*/
 
 
     [HttpPost("LoadEnvironment")]
@@ -49,87 +40,115 @@ public class EnvironmentController : ControllerBase
     {
         if (ModelState.IsValid)
         {
-            warehouseEnvironment = environment;
+            MywarehouseEnvironment = environment;
             return Ok();
         }
 
         return BadRequest();
     }
     [HttpPost("RegisterAgent")]
-    public ActionResult<int> RegisterAgent([FromBody] Agent agent)
+    public ActionResult<int> RegisterAgent()
     {
-        if (ModelState.IsValid)
-        {
-            int agentID = warehouseEnvironment.RegisterAgent(agent);
-            return Ok(agentID);
-        }
-
-        return BadRequest();
+        int agentID = MywarehouseEnvironment.RegisterAgent();
+        return Ok(agentID);
     }
 
     [HttpPost("RegisterSensorPermission")]
-    public IActionResult RegisterAgentSensors([FromBody] AgentSensorRegister model)
+    public IActionResult RegisterAgentSensor([FromBody] AgentSensorRegister model)
     {
-        if(ModelState.IsValid)
+        if (!ModelState.IsValid
+        || !IsPowerOfTwo(model.SensorPermissions.Value)
+        || !MywarehouseEnvironment.SensorCapabilities.ContainsKey(model.SensorPermissions)
+        || !MywarehouseEnvironment.AgentIDs.Contains(model.AgentID))
         {
-            warehouseEnvironment.RegisterAgentSensorPermissions(model.AgentID, model.SensorPermissions); //might need to make this a boolean
-            return Ok();
+            return BadRequest();
         }
 
-        return BadRequest();
+        MywarehouseEnvironment.RegisterAgentSensorPermission(model.AgentID, model.SensorPermissions); //might need to make this a boolean
+        return Ok();
+
     }
 
     [HttpPost("RegisterMovementPermission")]
     public IActionResult RegisterAgentMovement([FromBody] AgentMovementRegister model)
     {
-        if (ModelState.IsValid)
+        if (!ModelState.IsValid
+        || !IsPowerOfTwo(model.MovePermissions.Value)
+        || !MywarehouseEnvironment.MovementCapabilities.ContainsKey(model.MovePermissions)
+        || !MywarehouseEnvironment.AgentIDs.Contains(model.AgentID))
         {
-            warehouseEnvironment.RegisterAgentMovementPermissions(model.AgentID, model.MovePermissions);
-            return Ok();
+            return BadRequest();
         }
 
-        return BadRequest();
+        MywarehouseEnvironment.RegisterAgentMovementPermission(model.AgentID, model.MovePermissions);
+        return Ok();
+
+
     }
 
-    [HttpGet("MakeMove")]
-    public ActionResult<EnvironmentState> MakeMove([FromBody] EnvironmentState state)
+    [HttpGet("GetAgentCurrentMoves")]
+    public ActionResult<List<MoveReturn>> GetAgentCurrentMoves(int agentID)
     {
-        if(ModelState.IsValid)
-        {
-            return Ok(warehouseEnvironment.MakeMove(state));
-        }
+        if (!MywarehouseEnvironment.AgentIDs.Contains(agentID)) return BadRequest();
 
-        return BadRequest();
+        var r = MywarehouseEnvironment.GetMoves(agentID);
+        return Ok(r);
     }
 
+    [HttpPost("GetSensorData")]
+    public ActionResult<ISensorData> GetSensorData([FromBody] AgentSensorRegister model)
+    {
+        if (!ModelState.IsValid || !MywarehouseEnvironment.AgentIDs.Contains(model.AgentID)
+        || !MywarehouseEnvironment.AgentIDToSensorCapabilities.TryGetValue(model.AgentID, out WarehouseSensorPermissions? sensor)
+        || !sensor.HasFlag(model.SensorPermissions))
+        {
+            return BadRequest();
+        }
+        var result = MywarehouseEnvironment.GetSensorData(model.AgentID, model.SensorPermissions); 
+        
+        return Ok(result);
+    }
+
+    
+        [HttpPost("MakeMove")]
+        public ActionResult<bool> MakeMove([FromBody] MoveModel moveModel)
+        {
+            if(ModelState.IsValid)
+            {
+                return Ok(MywarehouseEnvironment.MakeMove(moveModel.MoveID, moveModel.AgentID));
+            }
+
+            return BadRequest();
+        }
+    
 
     [HttpGet("GetSensorPermissions")]
-    public ActionResult<SensorPermissions> GetSensorPermissions(int agentID)
+    public ActionResult<List<WarehouseSensorPermissions>> GetSensorPermissions(int agentID)
     {
-        if (!warehouseEnvironment.AgentToID.ContainsValue(agentID)) return BadRequest();
-        
-        return Ok(warehouseEnvironment.AgentIDToSensorCapabilities[agentID]);
+        if (!MywarehouseEnvironment.AgentIDs.Contains(agentID)) return BadRequest();
+
+        return Ok(MywarehouseEnvironment.GetSensorPermissions(agentID));
     }
 
     [HttpGet("GetMovementPermissions")]
-    public ActionResult<MovementPermissions> GetMovementPermissions(int agentID)
+    public ActionResult<WarehouseMovementPermissions> GetMovementPermissions(int agentID)
     {
-        if (!warehouseEnvironment.AgentToID.ContainsValue(agentID)) return BadRequest();
+        if (!MywarehouseEnvironment.AgentIDs.Contains(agentID)) return BadRequest();
 
-        return Ok(warehouseEnvironment.AgentIDToMovementCapabilities[agentID]);
+        return Ok(MywarehouseEnvironment.GetMovementPermissions(agentID));
     }
 
-/*
-    [HttpGet("GetSuccessors")]
-    public ActionResult<List<Succesor<EnvironmentState>>> GenerateSuccesors([FromBody] EnvironmentState state)
-    {
-        if(ModelState.IsValid)
+    /*
+        [HttpGet("GetSuccessors")]
+        public ActionResult<List<Succesor<EnvironmentState>>> GenerateSuccesors([FromBody] EnvironmentState state)
         {
-            //return Ok(warehouseEnvironment.GetSuccesors(state));
-        }
+            if(ModelState.IsValid)
+            {
+                //return Ok(warehouseEnvironment.GetSuccesors(state));
+            }
 
-        return BadRequest();
-    }*/
+            return BadRequest();
+        }*/
 
 
 }

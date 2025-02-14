@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "Environments/1.0.0": {
+        "dependencies": {
+          "AIWorldLibrary": "1.0.0"
+        },
+        "runtime": {
+          "Environments.dll": {}
+        }
+      },
+      "AIWorldLibrary/1.0.0": {
+        "runtime": {
+          "AIWorldLibrary.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Environments/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AIWorldLibrary/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "rb6DQqTuVUVV6ouVb9LCzXhojQPbHKqHzxns0eNCLrvMi9p9nRZpZVpNgZv74rB6oSCmfSP4L+rIpZnQYjARGg==",
+  "success": true,
+  "projectFilePath": "/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/NeuralNetworkLibrary/NeuralNetworkLibrary.csproj",
+  "expectedPackageFiles": [
+    "/Users/hakopzarikyan/.nuget/packages/mathnet.numerics/5.0.0/mathnet.numerics.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,3 +1,5 @@
+using EnvironmentAPI;
+
 internal class Program
 {
     private static void Main(string[] args)
@@ -10,6 +12,7 @@ internal class Program
         builder.Services.AddSwaggerGen();
         builder.Services.AddControllers();
         builder.Services.AddScoped<ILogger, Logger<string>>();
+        builder.Services.AddSingleton<WarehouseEnvironment, WarehouseEnvironment>((x) => new WarehouseEnvironment([new(3,3), new (4, 1)]));
         var app = builder.Build();
 
         // Configure the HTTP request pipeline.
