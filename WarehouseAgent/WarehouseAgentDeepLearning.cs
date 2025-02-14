@@ -57,7 +57,7 @@ public class WarehouseAgentDeepLearning(NeuralNet net, string envAPIUrl, double 
     private readonly double Discount = discount;
     private readonly double CostOfLiving = costOfLiving;
     private readonly int MiniBatchSize = miniBatchSize;
-    private readonly double EpsilonDecay = epsilonDecay;
+    private readonly double EpsilonDecay = epsilonDecay; //tweak to rmeove randomnes as time goes on (handled it manually but can be changed later to not be)
     private readonly double Momentum = momentum;
     private readonly double IterationSwtich = iterationSwitch;
     private int iterationCounter = 0;
@@ -185,7 +185,7 @@ public class WarehouseAgentDeepLearning(NeuralNet net, string envAPIUrl, double 
 
         if (response.StatusCode != System.Net.HttpStatusCode.OK)
         {
-            throw new Exception($"failed on this: ({CurrentState.Location.X}, {CurrentState.Location.Y}) AgentDI: {model.AgentID}, Move: {model.MoveID}.");
+            throw new Exception($"failed on this: ({CurrentState?.Location.X}, {CurrentState?.Location.Y}) AgentDI: {model.AgentID}, Move: {model.MoveID}.");
         }
         await Sense();
 
@@ -240,7 +240,7 @@ public class WarehouseAgentDeepLearning(NeuralNet net, string envAPIUrl, double 
                 ;
             }
 
-            double target = state.Reward + (Discount * output);
+            double target = state.Reward - CostOfLiving + (Discount * output);
 
 
             var inputVector = MathNet.Numerics.LinearAlgebra.Vector<double>.Build.Dense([state.CurrentState.Location.X, state.CurrentState.Location.Y]); 
