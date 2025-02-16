@@ -9,6 +9,7 @@ using AIWorldLibrary;
 using Environments;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using NeuralNetworkLibrary;
 using Nez;
 using Nez.AI.Pathfinding;
 using Nez.UI;
@@ -21,8 +22,9 @@ public class VisualizerScene : Scene
     {
 
     }
-
     
+    MyAgentComponent _agentComponent;
+    MyEnvironmentComponent _environmentComponent; //switch this later.
     public override void Initialize()
     {
         base.Initialize();
@@ -30,11 +32,10 @@ public class VisualizerScene : Scene
         // Add our grid renderer to the scene
         //var component = AddSceneComponent<EnvironmentComponent>();
         var map = CreateEntity("map");
-        var env = map.AddComponent<EnvironmentComponent>();
-        environment = env.warehouseEnvironment;
-        var _agent =  map.AddComponent<AgentComponent>();
-        agent = _agent.agent;
-        AddRenderer(new VisualizerRenderer([_agent], environment));
+        _environmentComponent = map.AddComponent<MyEnvironmentComponent>();
+        _agentComponent =  map.AddComponent<MyAgentComponent>();
+
+        AddRenderer(new VisualizerRenderer([_agentComponent], _environmentComponent.warehouseEnvironment));
         
         ClearColor = Color.CornflowerBlue;
 
@@ -50,21 +51,21 @@ public class VisualizerScene : Scene
         // {
         //     Time.TimeScale = 1f;
         // }
-        if (agent.ID != -1 && agent.isReadyToDisplay == false)
+        if (_agentComponent.agent.ID != -1 && _agentComponent.agent.isReadyToDisplay == false)
         {
             if (Input.IsKeyDown(Microsoft.Xna.Framework.Input.Keys.P))
             {
-                agent.Epsilon = 0;
+                _agentComponent.agent.Epsilon = 0;
             }
 
-            agent.BatchTrain(100000, environment);
-            agent.isReadyToDisplay = true;
+            _agentComponent.agent.BatchTrain(100000, _environmentComponent.warehouseEnvironment);
+            _agentComponent.agent.isReadyToDisplay = true;
         }
-        else if (agent.ID != -1)
+        else if (_agentComponent.agent.ID != -1)
         {
-            if (!agent.MakingMove)
+            if (!_agentComponent.agent.MakingMove)
             {
-                var p = agent.MakeMove(environment);
+                var p = _agentComponent.agent.MakeMove(_environmentComponent.warehouseEnvironment);
             }
         }
     }
@@ -73,9 +74,9 @@ public class VisualizerRenderer : Renderer
 {
 
     private const int GridSize = 32; // Size of each grid cell
-    List<AgentComponent> Agents;
+    List<MyAgentComponent> Agents;
     WarehouseEnvironment Env;
-    public VisualizerRenderer(List<AgentComponent> agents, WarehouseEnvironment env, int renderOrder = 0)
+    public VisualizerRenderer(List<MyAgentComponent> agents, WarehouseEnvironment env, int renderOrder = 0)
         : base(renderOrder)
     {
         
@@ -119,8 +120,9 @@ public class VisualizerRenderer : Renderer
             {
                 for (int j = 0; j < Env.GraphSize.Width + 2; j++)
                 {
+
                     var res = Agents[0].agent.liveNet.Compute(MathNet.Numerics.LinearAlgebra.Vector<double>.Build.Dense([i, j]));
-                    var maxVal = res.Max();
+                    double maxVal = res.Max();
                     int action = res.ToList().IndexOf(maxVal) + 1;
                     points.Add((i, j, maxVal, action));
                 }
@@ -161,14 +163,14 @@ public class VisualizerRenderer : Renderer
 
     }
 }
-public class EnvironmentComponent : Component
+public class MyEnvironmentComponent : Component
 {
     public WarehouseEnvironment warehouseEnvironment = new WarehouseEnvironment([new(3, 3), new(4, 1)]);
 
 }
-public class AgentComponent : Component
+public class MyAgentComponent : Component
 {
-    EnvironmentComponent environmentComponent;
+    MyEnvironmentComponent environmentComponent;
     public IntertwinedWarehouseAgentDeepLearning agent = new IntertwinedWarehouseAgentDeepLearning
     (
         new NeuralNet(2, true).AddLayer(Activations.LeakyReLU, 15).AddLayer(Activations.LeakyReLU, 15).AddLayer(Activations.Identity, 4),
@@ -177,7 +179,7 @@ public class AgentComponent : Component
     );
     public override void Initialize()
     {
-        environmentComponent = Entity.GetComponent<EnvironmentComponent>();
+        environmentComponent = Entity.GetComponent<MyEnvironmentComponent>();
 
         agent.Register(environmentComponent.warehouseEnvironment);
         agent.RegisterMovements(environmentComponent.warehouseEnvironment);

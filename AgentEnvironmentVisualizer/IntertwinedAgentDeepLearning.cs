@@ -14,12 +14,12 @@ using WarehouseAgent;
 
 namespace AgentEnvironmentVisualizer;
 
-public class IntertwinedWarehouseAgentDeepLearning(NeuralNet net, double iterationSwitch = 1000, double epsilon = 0.200, double epsilonDecay = 1.0, double learningRate = 0.001, double momentum = 0, double discount = 0.95, double costOfLiving = -0.1, int miniBatchSize = 64)
+public class IntertwinedWarehouseAgentDeepLearning(NeuralNet net, double iterationSwitch = 1000, double epsilon = 0.350, double epsilonDecay = 1.0, double learningRate = 0.001, double momentum = 0, double discount = 0.90, double costOfLiving = -0.1, int miniBatchSize = 64)
 {
     public bool isReadyToDisplay = false;
     public NeuralNet liveNet = net;
     public NeuralNet stableNet = net;
-    public WarehouseAgentState? CurrentState = null;
+    public WarehouseAgentState CurrentState = null;
     public double Epsilon = epsilon;
     private readonly double LearningRate = learningRate;
     private readonly double Discount = discount;
@@ -34,7 +34,9 @@ public class IntertwinedWarehouseAgentDeepLearning(NeuralNet net, double iterati
     public bool MovementRegistered = false;
     public bool MakingMove = false;
 
+    public bool StopUpdating = false;
     private BufferWrapper buffer = new BufferWrapper();
+    #region perms
     // public class SensorPerms : BetterEnum
     // {
     //     public static readonly SensorPerms LocationSensor = new() { Value = 1 << 0 };
@@ -65,20 +67,14 @@ public class IntertwinedWarehouseAgentDeepLearning(NeuralNet net, double iterati
     //         return mP;
     //     }
     // }
+    #endregion
     public void BatchTrain(int amount, WarehouseEnvironment environment)
     {
         for (int i = 0; i < amount; i++)
         {
             if (!MakingMove)
             {
-                if (MakeMove(environment))
-                {
-
-                }
-                else
-                {
-
-                }
+                MakeMove(environment);
             }
         }
         isReadyToDisplay = true;
@@ -108,7 +104,7 @@ public class IntertwinedWarehouseAgentDeepLearning(NeuralNet net, double iterati
             throw new Exception("Couldn't register spot state sensor");
         }
     }
-    private List<MoveReturn>? GetAgentCurrentMoves(WarehouseEnvironment environment)
+    private List<MoveReturn> GetAgentCurrentMoves(WarehouseEnvironment environment)
     {
         var result = environment.GetMoves(ID);
         return result;
@@ -145,10 +141,13 @@ public class IntertwinedWarehouseAgentDeepLearning(NeuralNet net, double iterati
     }
     public bool MakeMove(WarehouseEnvironment environment)
     {
-        iterationCounter++;
-        if (iterationCounter % IterationSwtich == 0)
+        if (!StopUpdating)
         {
-            stableNet = liveNet.Clone();
+            iterationCounter++;
+            if (iterationCounter % IterationSwtich == 0)
+            {
+                stableNet = liveNet.Clone();
+            }
         }
         MakingMove = true;
         int moveID = SelectMoveID(environment);
@@ -167,28 +166,35 @@ public class IntertwinedWarehouseAgentDeepLearning(NeuralNet net, double iterati
         {
             if (CurrentState.Prev == null) throw new NotImplementedException("you spawn on a terminal???");
 
-            BufferState newBufferState = new BufferState(CurrentState.Prev, moveID, null, CurrentState.Prev.Score);
-            buffer.AddToBuffer(newBufferState);
-
-            if (buffer.Count >= MiniBatchSize)
+            if (!StopUpdating)
             {
-                Train();
+
+                BufferState newBufferState = new BufferState(CurrentState.Prev, moveID, null, CurrentState.Prev.Score);
+                buffer.AddToBuffer(newBufferState);
+
+                if (buffer.Count >= MiniBatchSize)
+                {
+                    Train();
+                }
             }
+
             CurrentState.Prev = null;
             MakingMove = false;
             return false;
         }
 
-        if (CurrentState.Prev != null) //might be an unneccessary check
+        if (!StopUpdating)
         {
-            BufferState newBufferState = new(CurrentState.Prev, moveID, CurrentState, CurrentState.Score);
-
-            buffer.AddToBuffer(newBufferState);
-            if (buffer.Count >= MiniBatchSize)
+            if (CurrentState.Prev != null) //might be an unneccessary check
             {
-                Train();
-            }
+                BufferState newBufferState = new(CurrentState.Prev, moveID, CurrentState, CurrentState.Score);
+                buffer.AddToBuffer(newBufferState);
+                if (buffer.Count >= MiniBatchSize)
+                {
+                    Train();
+                }
 
+            }
         }
         MakingMove = false;
         return true;
@@ -222,7 +228,7 @@ public class IntertwinedWarehouseAgentDeepLearning(NeuralNet net, double iterati
                 ;
             }
 
-            double target = state.Reward + (Discount * output);
+            double target = state.Reward - CostOfLiving + (Discount * output);
 
 
             var inputVector = MathNet.Numerics.LinearAlgebra.Vector<double>.Build.Dense([state.CurrentState.Location.X, state.CurrentState.Location.Y]);
@@ -251,7 +257,7 @@ public class IntertwinedWarehouseAgentDeepLearning(NeuralNet net, double iterati
         CurrentState = new WarehouseAgentState(location.Location, (int)score.SpotScore, CurrentState);
         //var pair = (location.Location.X, location.Location.Y);
     }
-    private PointInfo? GetCurrentLocation(WarehouseEnvironment environment)
+    private PointInfo GetCurrentLocation(WarehouseEnvironment environment)
     {
         var model = new
         {
@@ -264,7 +270,7 @@ public class IntertwinedWarehouseAgentDeepLearning(NeuralNet net, double iterati
         return (PointInfo)result;
     }
 
-    private SpotStateInfo? GetSpotState(WarehouseEnvironment environment)
+    private SpotStateInfo GetSpotState(WarehouseEnvironment environment)
     {
         var model = new
         {

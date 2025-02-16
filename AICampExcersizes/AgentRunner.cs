@@ -3,8 +3,9 @@ public class AgentRunner<TStateValue>
     where TStateValue : IEquatable<TStateValue>
 {
 
-    public static List<IVertexState<TStateValue>> RunAgent(IAgent<TStateValue> agent,
-                                                IEnvironment<TStateValue> environment)
+/*
+    public static List<IVertexState<TStateValue>> RunAgent(IAgent agent,
+                                                IEnvironment environment)
     {
         IVertexState<TStateValue> currentState = agent.CurrentState;
         currentState.TotalDistance = 0;
@@ -46,7 +47,7 @@ public class AgentRunner<TStateValue>
         return stack.ToList();
 
     }
-
+*/
     public static int BFSAndDFSPriority(IVertexState<TStateValue> curr, IVertexState<TStateValue> next, List<IVertexState<TStateValue>> visited)
     {
         return 0;

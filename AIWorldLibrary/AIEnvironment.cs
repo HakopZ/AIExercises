@@ -6,10 +6,6 @@ using System.Reflection.PortableExecutable;
 using System.Runtime.CompilerServices;
 
 namespace AIWorldLibrary;
-public interface IState
-{
-}
-
 public interface ISensorData
 {
 
@@ -35,7 +31,6 @@ public struct MoveReturn(int moveID, double chance)
 }
 
 public abstract class AIEnvironment<TEnvironmentState, TMovementPermissions, TSensorPermissions>
-    where TEnvironmentState : IState
     where TMovementPermissions : BetterEnum
     where TSensorPermissions : BetterEnum
 {

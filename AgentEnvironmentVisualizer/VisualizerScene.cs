@@ -2,7 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Drawing.Drawing2D;
 using System.Linq;
+using System.Net;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices.Marshalling;
 using System.Threading;
 using System.Threading.Tasks;
 using AIWorldLibrary;
@@ -24,7 +26,7 @@ public class VisualizerScene : Scene
     }
     IntertwinedWarehouseAgentDeepLearning agent;
     WarehouseEnvironment environment;
-    
+
     public override void Initialize()
     {
         base.Initialize();
@@ -34,18 +36,22 @@ public class VisualizerScene : Scene
         var map = CreateEntity("map");
         var env = map.AddComponent<EnvironmentComponent>();
         environment = env.warehouseEnvironment;
-        var _agent =  map.AddComponent<AgentComponent>();
+        var _agent = map.AddComponent<AgentComponent>();
         agent = _agent.agent;
         AddRenderer(new VisualizerRenderer([_agent], environment));
-        
+
         ClearColor = Color.CornflowerBlue;
 
     }
+
+    private float timeAccumulator = 0f;
+    private float updateInterval = 0.1f; // 10 updates per second
     public override void Update()
     {
+
         // if (Input.IsKeyDown(Microsoft.Xna.Framework.Input.Keys.S))
         // {
-            
+
         //     Time.TimeScale = 0.05f;
         // }
         // else if (Input.IsKeyDown(Microsoft.Xna.Framework.Input.Keys.W))
@@ -54,18 +60,31 @@ public class VisualizerScene : Scene
         // }
         if (agent.ID != -1 && agent.isReadyToDisplay == false)
         {
-            if (Input.IsKeyDown(Microsoft.Xna.Framework.Input.Keys.P))
-            {
-                agent.Epsilon = 0;
-            }
+            
 
-            agent.BatchTrain(100000, environment);
+            agent.BatchTrain(20000, environment);
+            agent.StopUpdating = true;
+            agent.Epsilon = 0;
             agent.isReadyToDisplay = true;
         }
         else if (agent.ID != -1)
         {
+            if (Input.IsKeyDown(Microsoft.Xna.Framework.Input.Keys.P))
+            {
+                agent.Epsilon = 0;
+            }
+            timeAccumulator += Time.DeltaTime;
+            if (timeAccumulator < updateInterval)
+            {
+                return;
+            }
+            else
+            {
+                timeAccumulator = 0f;
+            }
             if (!agent.MakingMove)
             {
+                
                 var p = agent.MakeMove(environment);
             }
         }
@@ -80,7 +99,6 @@ public class VisualizerRenderer : Renderer
     public VisualizerRenderer(List<AgentComponent> agents, WarehouseEnvironment env, int renderOrder = 0)
         : base(renderOrder)
     {
-        
         Agents = agents;
         Env = env;
     }
@@ -113,7 +131,7 @@ public class VisualizerRenderer : Renderer
         }
 
         //    spriteBatch.DrawRect(new Rectangle((Fire.X * 32) + 2, (Fire.Y * 32) + 2, GridSize - 4, GridSize - 4), Color.Red);
-        
+
         if (Input.IsKeyDown(Microsoft.Xna.Framework.Input.Keys.Space))
         {
             List<(int x, int y, double max, int direction)> points = [];
@@ -136,10 +154,10 @@ public class VisualizerRenderer : Renderer
                 switch (point.direction)
                 {
                     case 1:
-                        toDisplay = new Color(255, 0, 0);
+                        toDisplay = Color.Orange;
                         break;
                     case 2:
-                        toDisplay = new Color(0, 0, 255);
+                        toDisplay = Color.Blue;
                         break;
                     case 3:
                         toDisplay = Color.Purple;
@@ -156,7 +174,7 @@ public class VisualizerRenderer : Renderer
     private void DrawGridSpot(Batcher spriteBatch, Vector2 location, Vector2 size)
     {
         spriteBatch.DrawRect(location, size.X, size.Y, Color.Black);
-        if (location.X == 0 || location.Y == 0 || location.X / 32 == Env.GraphSize.Width +1 || location.Y / 32 == Env.GraphSize.Height +1)
+        if (location.X == 0 || location.Y == 0 || location.X / 32 == Env.GraphSize.Width + 1 || location.Y / 32 == Env.GraphSize.Height + 1)
             spriteBatch.DrawRect(new Rectangle((int)location.X + 2, (int)location.Y + 2, (int)size.X - 4, (int)size.Y - 4), Color.Red);
         else
             spriteBatch.DrawRect(new Rectangle((int)location.X + 2, (int)location.Y + 2, (int)size.X - 4, (int)size.Y - 4), Color.White);
@@ -175,7 +193,7 @@ public class AgentComponent : Component
     (
         new NeuralNet(2, true).AddLayer(Activations.LeakyReLU, 15).AddLayer(Activations.LeakyReLU, 15).AddLayer(Activations.Identity, 4),
         //envAPIUrl: "http://localhost:5085",
-        learningRate: 0.001 / 64
+        learningRate: 0.001 / 50
     );
     public override void Initialize()
     {
@@ -186,5 +204,5 @@ public class AgentComponent : Component
         agent.RegisterSensors(environmentComponent.warehouseEnvironment);
         SetEnabled(true);
     }
-    
+
 }

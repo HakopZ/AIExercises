@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AddCSPSolver")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f12663085ae0713062e596b6faed7009dca14a43")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+abe7ae38429280d7ad5265e47e8ad3952374a73c")]
 [assembly: System.Reflection.AssemblyProductAttribute("AddCSPSolver")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AddCSPSolver")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

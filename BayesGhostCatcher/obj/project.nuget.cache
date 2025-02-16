@@ -1,17 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "Z6k4hjSFRf3dPyVX1tVU2MmF0AzC9JC0ZkKq1uZY6zbrTx8CMjeVEhFVs0gGby206pVyriDT9bfm3HKVAvMytQ==",
+  "dgSpecHash": "ftNT2AlroqFGfdo3DoEt65vJBRAb5NUtqXtsIZRWzNUKoP9J2OOY7+KjGQtikkEewuKXgi53SSWL8d72hSremw==",
   "success": true,
   "projectFilePath": "/Users/hakopzarikyan/Documents/VSCode Projects/AICampExcersizes/BayesGhostCatcher/BayesGhostCatcher.csproj",
   "expectedPackageFiles": [
+    "/Users/hakopzarikyan/.nuget/packages/mathnet.numerics/5.0.0/mathnet.numerics.5.0.0.nupkg.sha512",
     "/Users/hakopzarikyan/.nuget/packages/microsoft.netcore.platforms/5.0.0/microsoft.netcore.platforms.5.0.0.nupkg.sha512",
     "/Users/hakopzarikyan/.nuget/packages/microsoft.win32.systemevents/5.0.0/microsoft.win32.systemevents.5.0.0.nupkg.sha512",
     "/Users/hakopzarikyan/.nuget/packages/monogame.content.builder.task/3.8.1.303/monogame.content.builder.task.3.8.1.303.nupkg.sha512",
     "/Users/hakopzarikyan/.nuget/packages/monogame.framework.desktopgl/3.8.1.303/monogame.framework.desktopgl.3.8.1.303.nupkg.sha512",
-    "/Users/hakopzarikyan/.nuget/packages/system.drawing.common/5.0.2/system.drawing.common.5.0.2.nupkg.sha512",
-    "/Users/hakopzarikyan/.nuget/packages/microsoft.netcore.app.ref/6.0.28/microsoft.netcore.app.ref.6.0.28.nupkg.sha512",
-    "/Users/hakopzarikyan/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.28/microsoft.aspnetcore.app.ref.6.0.28.nupkg.sha512",
-    "/Users/hakopzarikyan/.nuget/packages/microsoft.netcore.app.host.osx-arm64/6.0.28/microsoft.netcore.app.host.osx-arm64.6.0.28.nupkg.sha512"
+    "/Users/hakopzarikyan/.nuget/packages/system.drawing.common/5.0.2/system.drawing.common.5.0.2.nupkg.sha512"
   ],
   "logs": []
 }

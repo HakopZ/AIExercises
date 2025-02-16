@@ -1,7 +1,7 @@
 namespace AIWorldLibrary;
 
 public class Succesor<TState>
-    where TState : IState
+    where TState : notnull
 {
     public TState FromState { get; set; }
     public Dictionary<TState, double>? ToStates { get; set; }

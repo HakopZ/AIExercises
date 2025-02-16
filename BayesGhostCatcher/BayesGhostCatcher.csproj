@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <RollForward>Major</RollForward>
     <PublishReadyToRun>false</PublishReadyToRun>
     <TieredCompilation>false</TieredCompilation>
@@ -28,5 +28,9 @@
   </Target>
   <ItemGroup>
     <ProjectReference Include="..\Nez\Nez.Portable\Nez.MG38.csproj" />
+    <ProjectReference Include="..\AIWorldLibrary\AIWorldLibrary.csproj" />
+    <ProjectReference Include="..\Environments\Environments.csproj" />
+    <ProjectReference Include="..\WarehouseAgent\WarehouseAgent.csproj" />
+    <ProjectReference Include="..\AgentEnvironmentVisualizer\AgentEnvironmentVisualizer.csproj" />
   </ItemGroup>
 </Project>
